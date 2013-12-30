@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+		<title>/ascii/</title> 
+    </head>
+    <body>
+        <h1>/ascii/</h1>
+		
+		<form method="post">
+			<label>
+				<div>title</div>
+				<input type="text" name="title" value ="{{title}}">
+			</label>
+			<label>
+				<div>art</div>
+				<textarea name="art" rows="20" cols="50">{{art}}</textarea>
+			</label>			
+			<div style="color:red">{{error}}</div>
+			<input type="submit">
+		</form>
+		
+		<hr>
+		{% for art in arts %}
+		<!-- this is to insert python-->
+			<div class="art">
+				<div class="art-title">{{art.title}}</div>
+				<pre class="art-body">{{art.art}}</pre>
+				<!--pre preserves white space-->
+			</div>
+		{% endfor %}
+			
+    </body>
+</html>

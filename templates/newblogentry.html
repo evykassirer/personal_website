@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+		<title>Evy Kassirer</title> 
+    </head>
+    <body>
+        <a href="/blog" class="main-title">Evy Kassirer</a>
+		<hr>
+		<form method="post">
+			<label>
+				<div>title</div>
+				<input type="text" name="subject" value ="{{title}}">
+			</label>
+			<label>
+				<div>body</div>
+				<textarea name="content" rows="20" cols="50">{{body | safe}}</textarea>
+			</label>			
+			<div style="color:red">{{error}}</div>
+			<input type="submit">
+		</form>			
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+		<title>Evy Kassirer</title> 
+    </head>
+    <body>
+        <a href="/blog" class="main-title">Evy Kassirer</a>
+		<a href="/blog/newpost">Create a new post</a>
+		<br>
+		<br>
+		<hr>
+		{% for post in posts %}
+		<!-- this is to insert python-->
+			<div class="post">
+				<div class="post-title">{{post.title}}</div>
+				<pre class="post-content">{{post.body | safe}}</pre>				
+				<!--pre preserves white space-->
+			</div>
+		{% endfor %}
+		</hr>	
+    </body>
+</html>
