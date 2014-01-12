@@ -2,40 +2,95 @@ import os
 import webapp2
 import jinja2
 import re
+import random
+import string
+import hashlib
+import hmac
+from google.appengine.ext import db
+SECRET = "ASDH78iuAHSF087iuafkjNAsfs987dgfiuHJ"
 
+
+#jinja templates    
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
+                               autoescape = True)
+
+#database creation
+class User(db.Model):
+    username = db.StringProperty(required=True)
+    password = db.StringProperty(required=True)
+    email = db.StringProperty(required = False)
+    
+    @classmethod
+    def by_id(cls, uid):
+        return User.get_by_id(uid, parent=users_key())
+    @classmethod
+    def by_name(cls, uid):
+        return User.all().filter('name = ', name).get()
+
+#regular expressions to match for correct input
 USER_RE = re.compile(r"^[a-zA-Z0-9_-]{3,20}$")
 PASS_RE = re.compile(r"^.{3,20}$")
 EMAIL_RE = re.compile(r"^[\S]+@[\S]+\.[\S]+$")
 
 def valid_username(username):
     return USER_RE.match(username)
+def new_username(username):
+    user = db.GqlQuery("select * from User where username = :1", username).get()
+    if user: return False
+    else: return True
 def valid_pass(password):
     return PASS_RE.match(password) 
 def same_pass(password, verify):
     return password == verify
 def valid_email(email):
-    return email == "" or EMAIL_RE.match(email)
+    return email == "" or EMAIL_RE.match(email)    
     
-template_dir = os.path.join(os.path.dirname(__file__), 'templates')
-jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
-                               autoescape = True)
+#hashing
+def hash_str(s):
+    return hmac.new(SECRET, s).hexdigest()
+def make_secure_val(s):
+    return "%s|%s" % (s, hash_str(s))
+def check_secure_val(h):
+    val = h.split('|')[0]
+    if h==make_secure_val(val):
+        return val  
 
-                              
-def render_str(template, **params):
-    t = jinja_env.get_template(template)
-    return t.render(params)
-
+def make_salt():
+    return ''.join(random.choice(string.letters) for x in range(5))
+def make_pw_hash(name, pw, salt=""):
+    if not salt:
+        salt = make_salt()
+    h = hashlib.sha256(name + pw + salt).hexdigest()
+    return '%s|%s' % (h, salt)
+def valid_pw(name, pw, h):
+    salt = h.split('|')[1]
+    return h == make_pw_hash(name, pw, salt)
+#example:
+#h = make_pw_hash('spez', 'hunter2')
+#print valid_pw('spez', 'hunter2', h) ---- should return true
+    
+    
 class BaseHandler(webapp2.RequestHandler):
+    def render_str(self, template, **params):
+        t = jinja_env.get_template(template)
+        return t.render(params)
     def render(self, template, **kw):
-        self.response.out.write(render_str(template, **kw))
-
+        self.response.out.write(self.render_str(template, **kw))
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
         
 class SignUpHandler(BaseHandler):
     def get(self):
-        self.render('signup.html')
+        user_cookie_str = self.request.cookies.get('user')
+        if user_cookie_str:
+            cookie_val = check_secure_val(user_cookie_str)
+            if cookie_val:
+                self.redirect("/blog/welcome")
+            else: self.render('signup.html')
+        else: self.render('signup.html')
     def post(self):
+        #self.response.headers['Content-Type'] = 'text/plain'
         username = self.request.get('username')
         password = self.request.get('password')
         verify = self.request.get('verify')
@@ -45,6 +100,10 @@ class SignUpHandler(BaseHandler):
         if(not valid_username(username)):
             template_values['usererror'] = "That's not a valid username"
             error = True
+        else:
+            if(not new_username(username)):
+                template_values['newusererror'] = "That user already exists"
+                error = True
         if(not valid_pass(password)):
             template_values['passerror'] = "That wasn't a valid password."
             error = True            
@@ -57,10 +116,24 @@ class SignUpHandler(BaseHandler):
             error = True
         if(error): 
             self.render('signup.html', **template_values)
-        else: self.redirect("/welcome?username=%(username)s" % {"username": username})
+        else: 
+            if email:
+                u = User(username=username, password=make_pw_hash(username, password), email=email)
+            else:
+                u = User(username=username, password=make_pw_hash(username, password))
+            u.put() #puts in database
+            self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %str(make_secure_val(username)))
+            self.redirect("/blog/welcome")
 
 class WelcomeHandler(BaseHandler):
     def get(self):
-        username = self.request.get('username')
-        self.write("Welcome %(user)s!" % {"user": username})
-      
+        user_cookie_str = self.request.cookies.get('user')
+        if user_cookie_str:
+            cookie_val = check_secure_val(user_cookie_str)
+            if cookie_val:
+                self.write("Welcome %(user)s!" % {"user": cookie_val})
+                self.write("""<br><br><a href=/blog/logout>Log out</a>""")
+            else: 
+                self.write("there appears to be a problem here")
+                #self.redirect("/blog/logout")
+        else: self.redirect("/blog/signup") 

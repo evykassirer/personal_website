@@ -1,3 +1,6 @@
+#to do
+#link back to main on each page
+
 import os
 import webapp2
 import cgi
@@ -6,7 +9,8 @@ from rot13 import Rot13Handler
 from birthday import BirthdayHandler, ThanksHandler
 from signup import SignUpHandler, WelcomeHandler
 from asciichan import AsciichanHandler
-from blog import BlogFront, NewPost, PostPage, error404handler
+from blog import BlogFront, NewPost, PostPage, error404handler, flushHandler
+from login import LogInHandler, LogOutHandler
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -26,15 +30,24 @@ class MainPage(BaseHandler):
     def get(self):
         self.render("welcome.html")
 
+class RedirectHandler(BaseHandler):
+    def get(self):
+        url = self.request.get("url")
+        self.redirect(str(url))        
 
 app = webapp2.WSGIApplication([(r'/', MainPage),
-                                (r'/birthday', BirthdayHandler),
-                                (r'/thanks', ThanksHandler), 
-                                (r'/rot13', Rot13Handler),
-                                (r'/signup', SignUpHandler), 
-                                (r'/welcome', WelcomeHandler),
-                                (r'/asciichan', AsciichanHandler),
-                                (r'/blog', BlogFront),
-                                (r'/blog/newpost', NewPost),
-                                (r'/blog/404error', error404handler),
-                                (r'/blog/post/(\d+)', PostPage)], debug=True)
+                                (r'/birthday/?', BirthdayHandler),
+                                (r'/thanks/?', ThanksHandler), 
+                                (r'/rot13/?', Rot13Handler),
+                                (r'/asciichan/?', AsciichanHandler),
+                                (r'/blog?(?:/\.json)?', BlogFront),
+                                (r'/blog/newpost/?', NewPost),
+                                (r'/blog/post/(\d+)(?:\.json)?', PostPage),
+                                (r'/blog/signup/?', SignUpHandler), 
+                                (r'/blog/welcome/?', WelcomeHandler),
+                                (r'/blog/login/?', LogInHandler),
+                                (r'/blog/logout/?', LogOutHandler),
+                                (r'/blog/flush/?', flushHandler),
+                                (r'/redirect/?', RedirectHandler),
+                                (r'/blog/404error/?', error404handler)
+                                ], debug=True)

@@ -6,18 +6,23 @@
     </head>
     <body>
         <a href="/blog" class="main-title">Evy Kassirer</a>
-		<a href="/blog/newpost">Create a new post</a>
+		<a href="/blog/signup" class="login-link">Sign Up</a>
+		&nbsp;
+		<a href="/blog/login" class="login-link">Log In</a>
+		&nbsp;
+		<a href="/blog/newpost" class="login-link">Create a new post</a>
 		<br>
 		<br>
 		<hr>
 		{% for post in posts %}
 		<!-- this is to insert python-->
 			<div class="post">
-				<div class="post-title">{{post.title}}</div>
+				<a href="/blog/post/{{post.key().id()}}" class="post-title">{{post.title}}</a>
 				<pre class="post-content">{{post.body | safe}}</pre>				
 				<!--pre preserves white space-->
 			</div>
 		{% endfor %}
-		</hr>	
+		</hr>
+		<div class="age">{{s}}</div>
     </body>
 </html>

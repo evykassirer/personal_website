@@ -14,18 +14,22 @@
 			</label>
 			<label>
 				<div>art</div>
-				<textarea name="art" rows="20" cols="50">{{art}}</textarea>
+				<textarea name="art">{{art}}</textarea>
 			</label>			
-			<div style="color:red">{{error}}</div>
+			<div class="error">{{error}}</div>
 			<input type="submit">
 		</form>
+		
+		{% if img_url %}
+			<img class ="map" src="{{img_url}}">
+		{% endif %}
 		
 		<hr>
 		{% for art in arts %}
 		<!-- this is to insert python-->
-			<div class="art">
-				<div class="art-title">{{art.title}}</div>
-				<pre class="art-body">{{art.art}}</pre>
+			<div class="post">
+				<div class="post-title">{{art.title}}</div>
+				<pre class="post-content">{{art.art}}</pre>
 				<!--pre preserves white space-->
 			</div>
 		{% endfor %}

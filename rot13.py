@@ -11,6 +11,9 @@ rot13 = """<!DOCTYPE html>
     </head>
     <body>
         <h2>Enter some text to ROT13:</h1>
+        (Try pressing submit again after you encode your text)
+        <br>
+        <br>
         <form method="post">    
             <textarea name="text" style="height: 100px; width: 400px;">%(input)s</textarea> 
             <br>
