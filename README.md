@@ -1,10 +1,12 @@
-udacitycs253
+website
 ============
 Web Development Course Files
 
-
 This is a series of small projects plus a blog application 
 that were created as part of a udacity.com course (CS253 Web Development).
+
+I have since added more things that weren't part of the course, since I'm now using this as my personal website.
+You can now find some JavaScript games, and a Programming To Do + Coding Resources page.
 
 Old Stuff: a few files I was using during lessons, but weren't worth 
 putting on the website. 
