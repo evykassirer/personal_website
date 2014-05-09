@@ -49,33 +49,38 @@ class BaseHandler(webapp2.RequestHandler):
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
         
-class LogInHandler(BaseHandler):
+class WikiLogInHandler(BaseHandler):
     def get(self):
-        user_cookie_str = self.request.cookies.get('user')
+        next_url = self.request.headers.get('referer', '/wiki')
+        user_cookie_str = self.request.cookies.get('wikiuser')
         if user_cookie_str:
             cookie_val = check_secure_val(user_cookie_str)
             if cookie_val:
-                self.redirect("/blog/welcome")
+                self.redirect("/wiki")
             else: 
-                self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %"")
-                self.render('login.html')
-        else: self.render('login.html')
+                self.response.headers.add_header('Set-Cookie', 'wikiuser=%s; Path=/' %"")
+                self.render('login.html', next_url = next_url)
+        else: self.render('login.html', next_url = next_url)
     def post(self):
         #self.response.headers['Content-Type'] = 'text/plain'
+        next_url = str(self.request.get('next_url'))
+        if not next_url or '/login' in next_url:
+            next_url = '/wiki'
+        
         username = self.request.get('username')
         password = self.request.get('password')
-        user = db.GqlQuery("select * from User where username = :1", username).get()
+        user = db.GqlQuery("select * from WikiUser where username = :1", username).get()
         error = False
         if(not user): error = True
         elif(not valid_pw(username, password, user.password)): error = True
         if(error): 
             self.render('login.html', error="Invalid login")
         else: 
-            self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %str(make_secure_val(username)))
-            self.redirect("/blog/welcome")
+            self.response.headers.add_header('Set-Cookie', 'wikiuser=%s; Path=/' %str(make_secure_val(username)))
+            self.redirect(next_url)
 
-class LogOutHandler(BaseHandler):
+class WikiLogOutHandler(BaseHandler):
     def get(self):
-        self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %"")
-        self.redirect("/blog")
-    
+        next_url = self.request.headers.get('referer', '/wiki')
+        self.response.headers.add_header('Set-Cookie', 'wikiuser=%s; Path=/' %"")
+        self.redirect(next_url)

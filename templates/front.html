@@ -6,6 +6,8 @@
     </head>
     <body>
         <a href="/blog" class="main-title">Evy Kassirer</a>
+		<div class="pagebody">
+		<br>
 		<a href="/blog/signup" class="login-link">Sign Up</a>
 		&nbsp;
 		<a href="/blog/login" class="login-link">Log In</a>
@@ -18,11 +20,28 @@
 		<!-- this is to insert python-->
 			<div class="post">
 				<a href="/blog/post/{{post.key().id()}}" class="post-title">{{post.title}}</a>
-				<pre class="post-content">{{post.body | safe}}</pre>				
+				<pre class="post-content">{{post.body}}</pre>				
 				<!--pre preserves white space-->
 			</div>
 		{% endfor %}
 		</hr>
 		<div class="age">{{s}}</div>
+		</div>
+		<div class="sidebar">
+		Projects:
+		<br>
+        <br>
+        <a href = "/rot13">Rot13</a>
+        <br>
+        <a href = "/birthday">Do you know your birthday?</a>
+        <br>
+		<a href = "/asciichan">ASCIICHAN!</a>
+		<br>
+		<a href = "/blog">The blog (main course project)</a>
+		<br>
+		<a href = "/wiki">Wiki (course exam)</a>
+        <br>
+		<a href = "/udacity">Go back </a>
+        </div> 
     </body>
 </html>

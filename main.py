@@ -11,6 +11,9 @@ from signup import SignUpHandler, WelcomeHandler
 from asciichan import AsciichanHandler
 from blog import BlogFront, NewPost, PostPage, error404handler, flushHandler
 from login import LogInHandler, LogOutHandler
+from wiki import WikiFront, WikiPostPage, WikiEditPost
+from wikisignup import WikiSignUpHandler
+from wikilogin import WikiLogInHandler, WikiLogOutHandler
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -25,8 +28,12 @@ class BaseHandler(webapp2.RequestHandler):
         self.response.out.write(self.render_str(template, **kw))
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
-        
+
 class MainPage(BaseHandler):
+    def get(self):
+        self.render("frontpage.html")
+        
+class MainUdacityPage(BaseHandler):
     def get(self):
         self.render("welcome.html")
 
@@ -35,7 +42,30 @@ class RedirectHandler(BaseHandler):
         url = self.request.get("url")
         self.redirect(str(url))        
 
+class Resume(BaseHandler):
+    def get(self):
+      self.render("resume.html") 
+      
+class ToDo(BaseHandler):
+    def get(self):
+      self.render("todo.html") 
+
+class TicTacToe(BaseHandler):
+    def get(self):
+      self.render("tick-tack-toe.html")         
+      
+class XTicTacToe(BaseHandler):
+    def get(self):
+      self.render("super-ttt.html") 
+      
+PAGE_RE = r'((?:[a-zA-Z0-9_-]+/?)*)'
+        
 app = webapp2.WSGIApplication([(r'/', MainPage),
+                                (r'/udacity/?', MainUdacityPage),
+                                (r'/resume/?', Resume),
+                                (r'/todo/?', ToDo),
+                                (r'/tictactoe/?', TicTacToe),
+                                (r'/extreme_tictactoe/?', XTicTacToe),
                                 (r'/birthday/?', BirthdayHandler),
                                 (r'/thanks/?', ThanksHandler), 
                                 (r'/rot13/?', Rot13Handler),
@@ -49,5 +79,11 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/blog/logout/?', LogOutHandler),
                                 (r'/blog/flush/?', flushHandler),
                                 (r'/redirect/?', RedirectHandler),
-                                (r'/blog/404error/?', error404handler)
+                                (r'/404error/?', error404handler),
+                                (r'/wiki/?', WikiFront),
+                                (r'/wiki/signup/?', WikiSignUpHandler),
+                                (r'/wiki/logout/?', WikiLogOutHandler),
+                                (r'/wiki/login/?', WikiLogInHandler),
+                                (r'/wiki/_edit/' + PAGE_RE, WikiEditPost),
+                                (r'/wiki/' + PAGE_RE, WikiPostPage),
                                 ], debug=True)

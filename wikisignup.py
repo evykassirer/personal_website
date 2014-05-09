@@ -16,7 +16,7 @@ jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
                                autoescape = True)
 
 #database creation
-class User(db.Model):
+class WikiUser(db.Model):
     username = db.StringProperty(required=True)
     password = db.StringProperty(required=True)
     email = db.StringProperty(required = False)
@@ -36,7 +36,7 @@ EMAIL_RE = re.compile(r"^[\S]+@[\S]+\.[\S]+$")
 def valid_username(username):
     return USER_RE.match(username)
 def new_username(username):
-    user = db.GqlQuery("select * from User where username = :1", username).get()
+    user = db.GqlQuery("select * from WikiUser where username = :1", username).get()
     if user: return False
     else: return True
 def valid_pass(password):
@@ -80,17 +80,22 @@ class BaseHandler(webapp2.RequestHandler):
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
         
-class SignUpHandler(BaseHandler):
+class WikiSignUpHandler(BaseHandler):
     def get(self):
-        user_cookie_str = self.request.cookies.get('user')
+        next_url = self.request.headers.get('referer', '/wiki')
+        user_cookie_str = self.request.cookies.get('wikiuser')
         if user_cookie_str:
             cookie_val = check_secure_val(user_cookie_str)
             if cookie_val:
-                self.redirect("/blog/welcome")
-            else: self.render('signup.html')
-        else: self.render('signup.html')
+                self.redirect("/wiki")
+            else: self.render('signup.html', next_url=next_url)
+        else: self.render('signup.html', next_url=next_url)
     def post(self):
         #self.response.headers['Content-Type'] = 'text/plain'
+        next_url = str(self.request.get('next_url'))
+        if not next_url or '/login' in next_url:
+            next_url = '/wiki'
+        
         username = self.request.get('username')
         password = self.request.get('password')
         verify = self.request.get('verify')
@@ -118,23 +123,9 @@ class SignUpHandler(BaseHandler):
             self.render('signup.html', **template_values)
         else: 
             if email:
-                u = User(username=username, password=make_pw_hash(username, password), email=email)
+                u = WikiUser(username=username, password=make_pw_hash(username, password), email=email)
             else:
-                u = User(username=username, password=make_pw_hash(username, password))
+                u = WikiUser(username=username, password=make_pw_hash(username, password))
             u.put() #puts in database
-            self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %str(make_secure_val(username)))
-            self.redirect("/blog/welcome")
-
-class WelcomeHandler(BaseHandler):
-    def get(self):
-        user_cookie_str = self.request.cookies.get('user')
-        if user_cookie_str:
-            cookie_val = check_secure_val(user_cookie_str)
-            if cookie_val:
-                self.write("Welcome %(user)s!" % {"user": cookie_val})
-                self.write("""<br><br><a href=/blog/logout>Log out</a>""")
-            else: 
-                self.write("there appears to be a problem here")
-                #self.redirect("/blog/logout")
-        else: self.write("You're not logged in")
-        #self.redirect("/blog/signup") 
+            self.response.headers.add_header('Set-Cookie', 'wikiuser=%s; Path=/' %str(make_secure_val(username)))
+            self.redirect(next_url)

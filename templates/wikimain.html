@@ -2,14 +2,21 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
-		<title>eawkassirer</title> 
+		<title>Wiki</title> 
     </head>
     <body>
-        <div class="header">Welcome!</div>
-		
+		<a href="/wiki" class="main-title">Wiki</a>
 		<div class="pagebody">
-		<br>
-		This stuff was made as part of a course with Udacity at <a href = "/redirect?url=http://www.udacity.com/course/cs253" target="_blank">udacity.com/course/cs253</a>
+		Add / with the name of the page you'd like to see/edit to the end of the url</a>
+		</div>
+		
+		<div class="topbar">
+		{% if user %}
+		{{user}}(<a href="/wiki/logout">logout</a>)
+		{% endif %}
+		{% if not user %}
+		<a href="/wiki/login">login</a> | <a href="/wiki/signup">signup</a>
+		{% endif%}
 		</div>
 		
 		<div class="sidebar">
@@ -25,8 +32,9 @@
 		<a href = "/blog">The blog (main course project)</a>
 		<br>
 		<a href = "/wiki">Wiki (course exam)</a>
-		<br>
-		<a href = "/">Go back </a>
+        <br>
+		<a href = "/udacity">Go back </a>
 		</div>
+		
     </body>
 </html>

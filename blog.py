@@ -65,7 +65,7 @@ class Post(db.Model):
     def as_dict(self):
         time_fmt = '%c'
         dict = {}
-        dict["subject"] = str(self.body)
+        dict["subject"] = str(self.title)
         dict["content"] = str(self.body)
         dict["created"] = self.created.strftime(time_fmt)
         dict["last_modified"] = self.last_modified.strftime(time_fmt)
@@ -92,7 +92,7 @@ class PostPage(BaseHandler):
     def get(self, post_id):
         (post, last_queued) = get_post((str(post_id))) 
         if not post:
-            self.redirect("blog/404error")
+            self.redirect("/404error")
             return
         if self.request.url.endswith('.json'):
             self.render_json(post.as_dict())

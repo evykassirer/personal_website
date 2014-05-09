@@ -6,9 +6,11 @@ def escape_html(s):
     return cgi.escape(s, quote = True)
 
 birthdayform = """
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+<div class="header">What is your birthday?</div>
+<div class="pagebody">
+<br>
 <form method="post"> 
-        What is your birthday?
-	<br>
 	<label> Month <input type="text" name="month" value="%(month)s"> </label>
 	<label> Day <input type="text" name="day" value="%(day)s"> </label> 
 	<label> Year <input type="text" name="year" value="%(year)s"> </label>
@@ -17,6 +19,23 @@ birthdayform = """
 	<br>
         <input type="submit">
 </form>
+</div>
+<div class="sidebar">
+		Projects:
+		<br>
+        <br>
+        <a href = "/rot13">Rot13</a>
+        <br>
+        <a href = "/birthday">Do you know your birthday?</a>
+        <br>
+		<a href = "/asciichan">ASCIICHAN!</a>
+		<br>
+		<a href = "/blog">The blog (main course project)</a>
+		<br>
+		<a href = "/wiki">Wiki (course exam)</a>
+        <br>
+		<a href = "/udacity">Go back </a>
+        </div> 
 """    
 
 class BirthdayHandler(webapp2.RequestHandler):

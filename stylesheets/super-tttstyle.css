@@ -1,0 +1,99 @@
+html, body{
+	height: 100%;
+	position: relative;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+}
+
+a{
+	color: gray;
+    text-decoration: none;
+}
+
+.box{
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	width: 152px;
+	height: 154px;
+}
+
+.row {
+	display:flex;
+}
+
+.block{
+    width: 50px;
+	height: 50px;
+	border-style: solid;
+	border-color: black;
+	border-width:1px;
+	display: inline-block;
+}
+
+.turn{
+	background-color: yellow;
+}
+
+.p1on{
+	background-color: blue;
+}
+
+.p2on{
+	background-color: red;
+}
+
+#board{
+	display: block;
+	position: fixed;
+	float:left;
+	text-align:right;
+	height: 100%;
+	left: 200px;
+	top:0px;
+	padding:30px;
+	margin-right:2px;
+}
+
+#winner{
+	display: block;
+	position: fixed;
+	float:left;
+	text-align:center;
+	height: 100%;
+	left: 250px;
+	top:500px;
+	padding:30px;
+	margin-right:2px;
+	font-size: 50px;
+}
+
+#sidebar{
+	display: block;
+	background-color: #E0D5F5;
+	position: fixed;
+	float:left;
+	text-align:right;
+	height: 100%;
+	left: 0px;
+	top:0px;
+	padding:30px;
+	margin-right:2px;
+	font-size: 17px;
+}
+
+#footer{
+	position:fixed;
+	text-align:center;	
+	left: 300px;
+	bottom:50px;
+    color: gray;
+    font-size: 12px;
+}

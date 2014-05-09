@@ -3,15 +3,20 @@ import cgi
 
 def escape_html(s):
     return cgi.escape(s, quote = True)
+
+
     
 rot13 = """<!DOCTYPE html>
 <html>
     <head>
+        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
         <title>Unit 2 Rot 13</title> 
     </head>
+    
     <body>
-        <h2>Enter some text to ROT13:</h1>
-        (Try pressing submit again after you encode your text)
+        <div class="header">Enter some text to ROT13:</div>
+        <div class="pagebody">
+		(Try pressing submit again after you encode your text)
         <br>
         <br>
         <form method="post">    
@@ -19,6 +24,24 @@ rot13 = """<!DOCTYPE html>
             <br>
             <input type="submit">
         </form>
+        </div>
+        
+        <div class="sidebar">
+		Projects:
+		<br>
+        <br>
+        <a href = "/rot13">Rot13</a>
+        <br>
+        <a href = "/birthday">Do you know your birthday?</a>
+        <br>
+		<a href = "/asciichan">ASCIICHAN!</a>
+		<br>
+		<a href = "/blog">The blog (main course project)</a>
+		<br>
+		<a href = "/wiki">Wiki (course exam)</a>
+        <br>
+		<a href = "/udacity">Go back </a>
+        </div> 
     </body>
 </html>
 """  
