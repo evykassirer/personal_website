@@ -86,7 +86,8 @@ haswon = function(player){
 }
 
 turn = function(){
-	var board, target, old, player, nextBox, elem, string, oneMove, newGame, i;
+	var board, target, old, player, nextBox, elem, string, i, instr_on;
+	var oneMove, newGame, instructions; //the functions
 	
 	//add the elements to the board
 	board = document.getElementById("board");
@@ -99,10 +100,12 @@ turn = function(){
 	document.getElementById("currentplayer").innerHTML="Player 1";
 	player = "p1";
 	nextBox = "";
+	instr_on = false;
 	
 	//executes one move and changes the colour of one block
 	oneMove = function(e){
 		if(player == "win") return;
+		if(instr_on) return;
 		
 		e = e || event;  
 		target =  e.target || e.srcElement; 
@@ -172,9 +175,10 @@ turn = function(){
 		}
 	}
 	
-	//adds the listener to the board
+	//adds the turn listener to the board
 	board = document.getElementById("board");
 	board.addEventListener("click", oneMove, false);
+	
 	
 	//sets the New Game button to reset the board
 	newGame = function(){
@@ -191,10 +195,69 @@ turn = function(){
 		document.getElementById("currentplayer").innerHTML="Player 1";
 		player = "p1";
 		nextBox = "";
+		instr_on = false;
 		oneMove();
 	}
-	
+	//listener for the new game button
 	elem = document.getElementById("new");
 	elem.addEventListener("click", newGame, false);
+	
+	
+	//set listener for instructions
+	instructions = function(){
+		if(instr_on) {
+			return;
+		}
+		var back, e;
+		elem = document.getElementById("instructions");
+		elem.innerHTML = "Instructions: <br> <br> The first player can go any where on the board that they would like. " +
+						"However, the move of the first player will limit where the next player can go. " +
+						"Bold lines on the board indicate divisions of the larger board. " +
+						"Non bold lines indicate divisions of the smaller boards. " +
+						"Wherever the first player goes in a small board translates to where the next player can go in the large board. " +
+						"Within the smaller tic tac toe boards, game play works the same as regular tic tac toe. " +
+						"If a player wins a small board, then they get their color filling that box. " +
+						"<br><br>" +
+						"The objective of the game is to win on the larger board. " +
+						"<br><br>" +
+						"(Click anywhere to go back to the game)";
+		elem.style.backgroundColor = "powderblue";
+		elem.style.position = "fixed";
+		instr_on = true;
+		
+		e = e || event;  
+		e.cancelBubble = true;
+		if (e.stopPropagation) {
+			e.stopPropagation();
+		}
+		
+		//to turn instructions off
+		back = function(){
+			elem = document.getElementById("instructions");
+			elem.innerHTML = "";
+			elem.style.backgroundColor = "transparent";
+			elem.style.position = "static";
+			instr_on = false;
+			
+			elem = document.getElementsByClassName("body");
+			elem = elem[0];
+			elem.removeEventListener("click", back, false);
+			
+			e = e || event;  
+			e.cancelBubble = true;
+			if (e.stopPropagation) {
+				e.stopPropagation();
+			}
+		}
+		
+		elem = document.getElementsByClassName("body");
+		elem = elem[0];
+		elem.addEventListener("click", back, false);
+	}
+	
+	//listener or instructions
+	elem = document.getElementById("instr_button");
+	elem.addEventListener("click", instructions, false);
+	
 };
 turn();

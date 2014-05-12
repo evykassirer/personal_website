@@ -62,6 +62,19 @@ a{
 	margin-right:2px;
 }
 
+#instructions {
+	margin: auto;
+	top: 65px;
+	left: 260px;
+	height: 370px; 
+	width: 370px;
+	background-color: transparent;
+	color: #000;
+	padding:20px;
+	text-align:center;
+	line-height:20px;
+}
+
 #winner{
 	display: block;
 	position: fixed;
