@@ -109,29 +109,44 @@ turn = function(){
 		
 		e = e || event;  
 		target =  e.target || e.srcElement; 
-		if(nextBox !== ""){ //aka not the first turn
-			//invalid move if we've added "p1/2 on" to the block or the big box
-			if(target.className !== "block") return;
-			if(target.parentNode.parentNode.className !== "box turn") return; //make sure it's the right box too
-		}
-		nextBox = target.id.substring(3, 6); //this is the subbox that will rule which big box will be used next
 		
-		if(!document.getElementById(nextBox)) return; //this happens when you click New Game
-		if(document.getElementById(nextBox).className === "box p1on" || document.getElementById(nextBox).className === "box p2on") return;
+		//invalid move if we've added "p1/2 on" to the block 
+		if(target.className !== "block") return; 
+
+		//if there's a box highlighted yellow make sure it's in that box
+		if(nextBox !== "" && target.parentNode.parentNode.className !== "box turn") return; 
 		
-		//change the specific element, and just the specific element
+		
+		//HERE IS WHERE BUSINESS STARTS
+		
+		//change the specific element where the player made a move
 		target.setAttribute("class", "block " + player + "on");		
 		
-		//change highlighted box related stuff
+		//this catches the click after newgame - don't think I need it now
+		//if(!document.getElementById(nextBox)) return; 
+		
+		//unhighlight the box
 		elem = document.getElementsByClassName("turn");
 		if(elem.length) {
 			string = elem[0].className;
 			string = string.substr(0, string.length-5);
 			elem[0].className = string;
 		}
-		elem = document.getElementById(nextBox); 
-		elem.className = elem.className + " turn";
 		
+		//this is the subbox that will rule which big box will be used next
+		nextBox = target.id.substring(3, 6); 
+		
+		//if the next box has already been won, nextbox is freed
+		if(document.getElementById(nextBox).className === "box p1on" || document.getElementById(nextBox).className === "box p2on") {
+			nextBox = "";
+		}
+		//otherwise make the next highlighted box
+		else{		
+			elem = document.getElementById(nextBox); 
+			elem.className = elem.className + " turn";
+		}		
+		
+		//stop the bubbling
 		e.cancelBubble = true;
 		if (e.stopPropagation) {
 			e.stopPropagation();
@@ -217,6 +232,8 @@ turn = function(){
 						"Wherever the first player goes in a small board translates to where the next player can go in the large board. " +
 						"Within the smaller tic tac toe boards, game play works the same as regular tic tac toe. " +
 						"If a player wins a small board, then they get their color filling that box. " +
+						"If a player is redirected to a board that has already been filled, " + 
+						"then they will be allowed to play anywhere that is unoccupied on the board." +
 						"<br><br>" +
 						"The objective of the game is to win on the larger board. " +
 						"<br><br>" +
