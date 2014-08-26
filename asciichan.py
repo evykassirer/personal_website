@@ -77,7 +77,7 @@ class AsciichanHandler(BaseHandler):
         img_url = None
         if points:
             img_url = gmaps_img(points)               
-        self.render("frontascii.html", title=title, art=art, error=error, arts=arts, img_url=img_url)
+        self.render("/udacity/frontascii.html", title=title, art=art, error=error, arts=arts, img_url=img_url)
     def get(self):
         self.render_front()
     def post(self):

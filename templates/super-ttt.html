@@ -3,32 +3,56 @@
     <head>
 		<title>EXTREME Tic Tac Toe</title>
 		<link type="text/css" rel="stylesheet" href="/stylesheets/super-tttstyle.css" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+        <link rel="shortcut icon" type="image/jpeg" href="/static/E.png" />
     </head>
 	<body class="body">
-		<div id = "board">
-		<!-- the parts in the board are added dynamically with javascript because it's annoying to type it all out -->
+		<div class="toptoolbar"> 
+			<div id="my_name">Evy Kassirer</div> 
+	  		<div class = "section_name" onclick="window.location = '/';">About</div>
+	  		<div class = "section_name" onclick="window.open('https://evykassirer.wordpress.com/', '_blank');">Blog</div>
+	  		<div class = "section_name" onclick="window.open('/resume', '_blank');">Resume</div>
+	  		<div class = "dropdown">
+	  			<div class = "section_name" onclick="window.location = '/';">Projects</div>
+	  			<ul>
+                    <li onclick="window.location = '/tictactoe';">Tic Tac Toe</li>
+                    <li onclick="window.location = '/udacity';">Web Dev</li> 
+                    <!-- Web Development - Udacity Course Projects ~~ need to fix line wrapping issue  --> 
+                    <li onclick="window.open('http://davepagurek.com/yc/', '_blank');">Code Next</li>
+                    <li onclick="window.location = '/todo';">Future learning</li> <!-- Programming To Do List <br> && Coding Resources -->
+                    <!-- put what languages are on the projects ~~ maybe make a projects page-->
+                </ul>
+	  		</div>
+	 		<div class = "section_name" onclick="window.open('https://github.com/evykassirer/', '_blank');">GitHub</div>
+	 		<div class = "section_name" onclick="window.open('http://ca.linkedin.com/in/ekassirer/', '_blank');">LinkedIn</div>
+	 		<div class = "section_name" onclick="window.open('mailto:evy.kassirer@gmail.com', '_blank');">Email</div>
 		</div>
-		<div id = "sidebar">
-			<a href="/">Home</a>
-			<br>
-			<a href="/tictactoe">Tic Tac Toe</a>
-			<br>
-			<br>
-			<b> EXTREME <br> Tic Tac Toe </b>
-			<br>
-			<br>
-			Turn: <span id="currentplayer" style ="color: blue;"> Player 1 </span>
-			<br>
-			<br>
-			<button type="button" id ="new">New Game</button>
-			<br>
-			<br>
-			<button type="button" id ="instr_button">Instructions</button>
+		<div class="topplaceholder"></div>
+		<div class="pagebody">
+			<div id = "board">
+			<!-- the parts in the board are added dynamically with javascript because it's annoying to type it all out -->
+			</div>
+			<div id = "sidebar">
+				<br>
+				<a href="/tictactoe">Tic Tac Toe</a>
+				<br>
+				<br>
+				<b> EXTREME <br> Tic Tac Toe </b>
+				<br>
+				<br>
+				Turn: <span id="currentplayer" style ="color: blue;"> Player 1 </span>
+				<br>
+				<br>
+				<button type="button" id ="new">New Game</button>
+				<br>
+				<br>
+				<button type="button" id ="instr_button">Instructions</button>
+			</div>
+			<div id="winner"></div>
+			<div id="instructions"></div>
+			<script src="/js/super-tttscript.js">			
+			</script>
 		</div>
-		<div id="winner"></div>
-		<div id="instructions"></div>
-		<script src="/js/super-tttscript.js">			
-		</script>
 	</body>
 </html>
 

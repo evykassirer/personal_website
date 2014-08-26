@@ -59,8 +59,8 @@ class WikiLogInHandler(BaseHandler):
                 self.redirect("/wiki")
             else: 
                 self.response.headers.add_header('Set-Cookie', 'wikiuser=%s; Path=/' %"")
-                self.render('login.html', next_url = next_url)
-        else: self.render('login.html', next_url = next_url)
+                self.render('udacity/login.html', next_url = next_url)
+        else: self.render('udacity/login.html', next_url = next_url)
     def post(self):
         #self.response.headers['Content-Type'] = 'text/plain'
         next_url = str(self.request.get('next_url'))
@@ -74,7 +74,7 @@ class WikiLogInHandler(BaseHandler):
         if(not user): error = True
         elif(not valid_pw(username, password, user.password)): error = True
         if(error): 
-            self.render('login.html', error="Invalid login")
+            self.render('udacity/login.html', error="Invalid login")
         else: 
             self.response.headers.add_header('Set-Cookie', 'wikiuser=%s; Path=/' %str(make_secure_val(username)))
             self.redirect(next_url)

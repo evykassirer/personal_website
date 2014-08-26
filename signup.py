@@ -87,8 +87,8 @@ class SignUpHandler(BaseHandler):
             cookie_val = check_secure_val(user_cookie_str)
             if cookie_val:
                 self.redirect("/blog/welcome")
-            else: self.render('signup.html')
-        else: self.render('signup.html')
+            else: self.render('udacity/signup.html')
+        else: self.render('udacity/signup.html')
     def post(self):
         #self.response.headers['Content-Type'] = 'text/plain'
         username = self.request.get('username')
@@ -115,7 +115,7 @@ class SignUpHandler(BaseHandler):
             template_values['emailerror'] = "That's not a valid email."
             error = True
         if(error): 
-            self.render('signup.html', **template_values)
+            self.render('udacity/signup.html', **template_values)
         else: 
             if email:
                 u = User(username=username, password=make_pw_hash(username, password), email=email)

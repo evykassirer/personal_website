@@ -35,7 +35,7 @@ class MainPage(BaseHandler):
         
 class MainUdacityPage(BaseHandler):
     def get(self):
-        self.render("welcome.html")
+        self.render("udacity/welcome.html")
 
 class RedirectHandler(BaseHandler):
     def get(self):

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<title>Tic Tac Toe</title>
-		<link type="text/css" rel="stylesheet" href="/stylesheets/tttstyle.css" />
-        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+        <link type="text/css" rel="stylesheet" href="/stylesheets/udacity.css" />
         <link rel="shortcut icon" type="image/jpeg" href="/static/E.png" />
+		<title>{{title}}</title> 
     </head>
-	<body class="body">
-		<div class="toptoolbar"> 
+    <body>
+    	<div class="toptoolbar"> 
 			<div id="my_name">Evy Kassirer</div> 
 	  		<div class = "section_name" onclick="window.location = '/';">About</div>
 	  		<div class = "section_name" onclick="window.open('https://evykassirer.wordpress.com/', '_blank');">Blog</div>
@@ -29,43 +29,44 @@
 		</div>
 		<div class="topplaceholder"></div>
 		<div class="pagebody">
-			<div id = "board">
-				<div class = "row">
-					<div class= "block" id="one"></div>
-					<div class = "block" id="two"></div>
-					<div class = "block" id="three"></div>
-				</div>
-				<div class = "row">
-					<div class = "block" id="four"></div>
-					<div class = "block" id="five"></div>
-					<div class = "block" id="six"></div>
-				</div>
-				<div class = "row">
-					<div class = "block" id="sev"></div>
-					<div class = "block" id="eight"></div>
-					<div class = "block" id="nine"></div>
-				</div>
+			<div class="sidebar">
+				<a href = "/udacity" id="sidebartitle"> Projects: </a>
+				<br>
+		        <br>
+		        <a href = "/rot13">Rot13</a>
+		        <br>
+		        <a href = "/birthday">Do you know your birthday?</a>
+		        <br>
+				<a href = "/asciichan">ASCIICHAN!</a>
+				<br>
+				<a href = "/blog">The blog (main course project)</a>
+				<br>
+				<a href = "/wiki">Wiki (course exam)</a>
 			</div>
-			<div id = "sidebar">
+			<div class="content">
+				<div class="topbar">
+				{% if user %}
+				<a href="/wiki/_edit/{{title}}">Edit this page </a> |  Page History
+				&nbsp;
+				logged in as <b>{{user}}</b> (<a href="/wiki/logout">logout</a>)
+				{% endif %}
+				{% if not user %}
+				<a href="/wiki/login">login</a>|<a href="/wiki/signup">signup</a>
+				{% endif%}
+				</div>
 				<br>
-				<b> Tic Tac Toe <b>
 				<br>
-				<br>
-				<a href="/extreme_tictactoe">EXTREME <br> Tic Tac Toe</a>
-				<br>
-				<br>
-				Turn: <span id="currentplayer" style ="color: blue;"> Player 1 </span>
-				<br>
-				<br>
-				<button type="button" id ="new">New Game</button>
+				<hr>
+					<div class="post-date"> {{last_edited}}</div>
+					<div class="post">
+						<form method="post">
+						<textarea class="post-content" name="content">{{content | safe}}</textarea>
+						<div style="color:red">{{error}}</div>
+						<input type="submit">		
+						</form>
+					</div>
+				</hr>	
 			</div>
-			<div id = "footer">
-				Made using JavaScript, HTML, and CSS (my first JavaScript project!)
-			</div>
-			<div id="winner"></div>
-			<script src="/js/tttscript.js"></script>
 		</div>
-	</body>
+    </body>
 </html>
-
-

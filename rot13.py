@@ -10,38 +10,61 @@ rot13 = """<!DOCTYPE html>
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+        <link type="text/css" rel="stylesheet" href="/stylesheets/udacity.css" />
+        <link rel="shortcut icon" type="image/jpeg" href="/static/E.png" />
         <title>Unit 2 Rot 13</title> 
     </head>
     
     <body>
-        <div class="header">Enter some text to ROT13:</div>
-        <div class="pagebody">
-		(Try pressing submit again after you encode your text)
-        <br>
-        <br>
-        <form method="post">    
-            <textarea name="text" style="height: 100px; width: 400px;">%(input)s</textarea> 
-            <br>
-            <input type="submit">
-        </form>
+        <div class="toptoolbar"> 
+            <div id="my_name">Evy Kassirer</div> 
+            <div class = "section_name" onclick="window.location = '/';">About</div>
+            <div class = "section_name" onclick="window.open('https://evykassirer.wordpress.com/', '_blank');">Blog</div>
+            <div class = "section_name" onclick="window.open('/resume', '_blank');">Resume</div>
+            <div class = "dropdown">
+                <div class = "section_name" onclick="window.location = '/';">Projects</div>
+                <ul>
+                    <li onclick="window.location = '/tictactoe';">Tic Tac Toe</li>
+                    <li onclick="window.location = '/udacity';">Web Dev</li> 
+                    <!-- Web Development - Udacity Course Projects ~~ need to fix line wrapping issue  --> 
+                    <li onclick="window.open('http://davepagurek.com/yc/', '_blank');">Code Next</li>
+                    <li onclick="window.location = '/todo';">Future learning</li> <!-- Programming To Do List <br> && Coding Resources -->
+                    <!-- put what languages are on the projects ~~ maybe make a projects page-->
+                </ul>
+            </div>
+            <div class = "section_name" onclick="window.open('https://github.com/evykassirer/', '_blank');">GitHub</div>
+            <div class = "section_name" onclick="window.open('http://ca.linkedin.com/in/ekassirer/', '_blank');">LinkedIn</div>
+            <div class = "section_name" onclick="window.open('mailto:evy.kassirer@gmail.com', '_blank');">Email</div>
         </div>
-        
-        <div class="sidebar">
-		Projects:
-		<br>
-        <br>
-        <a href = "/rot13">Rot13</a>
-        <br>
-        <a href = "/birthday">Do you know your birthday?</a>
-        <br>
-		<a href = "/asciichan">ASCIICHAN!</a>
-		<br>
-		<a href = "/blog">The blog (main course project)</a>
-		<br>
-		<a href = "/wiki">Wiki (course exam)</a>
-        <br>
-		<a href = "/udacity">Go back </a>
-        </div> 
+        <div class="topplaceholder"></div>
+        <div class="pagebody">
+            <div class="sidebar">
+        		<a href = "/udacity" id="sidebartitle"> Projects: </a>
+        		<br>
+                <br>
+                <a href = "/rot13">Rot13</a>
+                <br>
+                <a href = "/birthday">Do you know your birthday?</a>
+                <br>
+        		<a href = "/asciichan">ASCIICHAN!</a>
+        		<br>
+        		<a href = "/blog">The blog (main course project)</a>
+        		<br>
+        		<a href = "/wiki">Wiki (course exam)</a>
+            </div>
+            <div class="content">
+                Enter some text to ROT13:
+
+                (Try pressing submit again after you encode your text)
+                <br>
+                <br>
+                <form method="post">    
+                    <textarea name="text" style="height: 100px; width: 400px;">%(input)s</textarea> 
+                    <br>
+                    <input type="submit">
+                </form>
+            </div> 
+        </div>
     </body>
 </html>
 """  

@@ -78,7 +78,7 @@ class BlogFront(BaseHandler):
         s = "Queried %s seconds ago" % time_since
         if time_since == 1:
             s = s.replace("seconds", "second")
-        self.render("front.html", posts=posts, s=s)
+        self.render("udacity/front.html", posts=posts, s=s)
     def get(self):
         if self.request.url.endswith('.json'):
             posts = db.GqlQuery("SELECT * FROM Post ORDER BY created DESC")
@@ -101,11 +101,11 @@ class PostPage(BaseHandler):
             s = "Queried %s seconds ago" % time_since
             if time_since == 1:
                 s = s.replace("seconds", "second")
-            self.render("singlepost.html", post=post, s=s)
+            self.render("udacity/singlepost.html", post=post, s=s)
         
 class NewPost(BaseHandler):
     def render_newpost(self, title="", body="", error=""):
-        self.render("newblogentry.html", title=title, body=body, error=error)
+        self.render("udacity/newblogentry.html", title=title, body=body, error=error)
     def get(self):
        self.render_newpost()        
     def post(self):

@@ -58,8 +58,8 @@ class LogInHandler(BaseHandler):
                 self.redirect("/blog/welcome")
             else: 
                 self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %"")
-                self.render('login.html')
-        else: self.render('login.html')
+                self.render('udacity/login.html')
+        else: self.render('udacity/login.html')
     def post(self):
         #self.response.headers['Content-Type'] = 'text/plain'
         username = self.request.get('username')
@@ -69,7 +69,7 @@ class LogInHandler(BaseHandler):
         if(not user): error = True
         elif(not valid_pw(username, password, user.password)): error = True
         if(error): 
-            self.render('login.html', error="Invalid login")
+            self.render('udacity/login.html', error="Invalid login")
         else: 
             self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %str(make_secure_val(username)))
             self.redirect("/blog/welcome")

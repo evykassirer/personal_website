@@ -102,11 +102,11 @@ class WikiPost(db.Model):
 class WikiFront(BaseHandler):
     def get(self):
         user = self.check_user()
-        self.render("wikimain.html", user=user)     
+        self.render("udacity/wikimain.html", user=user)     
 
 class WikiPostPage(BaseHandler):
     def render_post(self, user=False, title="", content="", last_edited="", error=""):
-        self.render("wikipost.html", user=user, title=title, content=content, last_edited=last_edited, error=error)           
+        self.render("udacity/wikipost.html", user=user, title=title, content=content, last_edited=last_edited, error=error)           
     def get(self, post_name):
         user = self.check_user() 
         post = get_post(str(post_name))
@@ -121,7 +121,7 @@ class WikiPostPage(BaseHandler):
 
 class WikiEditPost(BaseHandler):
     def render_post(self, title="", content="", last_edited="", error="", user=False):
-        self.render("wikiedit.html", title=title, content=content, last_edited=last_edited, error=error, user=user)
+        self.render("udacity/wikiedit.html", title=title, content=content, last_edited=last_edited, error=error, user=user)
     def get(self, post_name):
         user = self.check_user() 
         if not user: self.redirect("/wiki/login")
@@ -130,7 +130,7 @@ class WikiEditPost(BaseHandler):
             self.render_post(title=post_name, content=post["content"], last_edited=post["last_edited"], user=user)    
         else:
             title = post_name
-            self.render("wikiedit.html", title=title, user=user)
+            self.render("udacity/wikiedit.html", title=title, user=user)
     def post(self, post_name):
         title = post_name
         content = self.request.get("content")

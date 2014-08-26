@@ -88,8 +88,8 @@ class WikiSignUpHandler(BaseHandler):
             cookie_val = check_secure_val(user_cookie_str)
             if cookie_val:
                 self.redirect("/wiki")
-            else: self.render('signup.html', next_url=next_url)
-        else: self.render('signup.html', next_url=next_url)
+            else: self.render('udacity/signup.html', next_url=next_url)
+        else: self.render('udacity/signup.html', next_url=next_url)
     def post(self):
         #self.response.headers['Content-Type'] = 'text/plain'
         next_url = str(self.request.get('next_url'))
@@ -120,7 +120,7 @@ class WikiSignUpHandler(BaseHandler):
             template_values['emailerror'] = "That's not a valid email."
             error = True
         if(error): 
-            self.render('signup.html', **template_values)
+            self.render('udacity/signup.html', **template_values)
         else: 
             if email:
                 u = WikiUser(username=username, password=make_pw_hash(username, password), email=email)

@@ -1,20 +1,10 @@
-html, body{
-	height: 100%;
-	position: relative;
-}
-
-body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    width: 800px;
-    margin: 0 auto;
-    padding: 10px;
-    color: #333;
-}
-
 a{
 	color: gray;
     text-decoration: none;
+}
+
+a:hover {
+	color:purple;
 }
 
 .box{
@@ -57,7 +47,7 @@ a{
 	text-align:right;
 	height: 100%;
 	left: 200px;
-	top:0px;
+	top:60px;
 	padding:30px;
 	margin-right:2px;
 }
@@ -90,13 +80,14 @@ a{
 
 #sidebar{
 	display: block;
-	background-color: #E0D5F5;
+	background-color: #BCD2EE;
 	position: fixed;
 	float:left;
-	text-align:right;
+	text-align:center;
 	height: 100%;
+	width:120px;
 	left: 0px;
-	top:0px;
+	top:50px;
 	padding:30px;
 	margin-right:2px;
 	font-size: 17px;
