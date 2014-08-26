@@ -1,11 +1,14 @@
-body {
-    position: relative;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px;
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    width: 800px;
-    margin: 0 auto;
-    padding: 10px;
+body {
+    /*position: relative;
+    font-family: Helvetica, Arial, sans-serif;*/
+    font-size: 14px;
+    background-color: #F1F0FF;
     color: #333;
 }
 
@@ -147,6 +150,7 @@ html, body{
 	height: 100%;
 }
 
+/*
 .header{
     width:1200px;
     margin:0px auto;
@@ -154,22 +158,38 @@ html, body{
     color: #222;
     font-size: 40px;
     font-weight: bold;
-    /*text-align: center;*/
     margin-bottom: 30px;
     text-decoration: none;
 	left: 300px;
 	position:fixed;
 }
+*/
 
 .pagebody{
 	padding-top: 10px;
-	font-family: sans-serif;
-	text-align: left;
-	position: absolute;
-	width: 600px;	
-	width: 60%;
-	left: 300px;
-	top: 50px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.mepic{
+    float: left;
+    position: relative;
+    width: 20%;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+}
+
+.intro{
+    float: left;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+	line-height:150%;
+    width: 50%;
+    padding: 20px;
 }
 
 .sidebar{

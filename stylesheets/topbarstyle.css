@@ -1,0 +1,44 @@
+.toptoolbar {
+    display:inline-block;
+    overflow: hidden;
+    width: 100%;
+    background-color: #BDAEC6;
+
+}
+
+#my_name {
+	float: left;
+	display:inline-block;
+	height:50px;
+	line-height: 50px;
+	width: 200px;
+	background-color: #BDAEC6;
+	
+	color: black;
+	text-align:center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.section_name {
+	float: left;
+	display:inline-block;
+	height:50px;
+	line-height: 50px;
+	width: 100px;
+	background-color: #BDAEC6;
+	
+	color: black;
+	text-align:center;
+    margin: 0;
+    padding: 0;
+
+    /* because it's a link */
+    cursor: pointer;
+}
+
+.section_name:hover {
+	background-color: #421C52;
+	color: white;
+}
