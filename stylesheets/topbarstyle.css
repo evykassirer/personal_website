@@ -70,3 +70,12 @@
 	background-color: #421C52;
 	color: white;
 }
+
+/* drop down part */
+.dropdown ul {
+	display:none;
+}
+
+.dropdown:hover ul {
+	display:block;
+} 

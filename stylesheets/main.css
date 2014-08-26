@@ -144,6 +144,9 @@ hr {
 	top: 112px;
 }
 
+
+
+
 /*FOR FRONT PAGE*/
 html, body{
 	position: static;
@@ -192,6 +195,16 @@ img {
     padding: 20px;
 }
 
+.intro a {
+    text-decoration: none;
+    color: #421C52;
+}
+
+.intro a:hover {
+    text-decoration: underline;
+}
+
+/* sidebar for other pages */
 .sidebar{
 	display: block;
 	background-color: #E0D5F5;
