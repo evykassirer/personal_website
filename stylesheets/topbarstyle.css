@@ -31,14 +31,42 @@
 	
 	color: black;
 	text-align:center;
-    margin: 0;
-    padding: 0;
 
     /* because it's a link */
     cursor: pointer;
 }
 
 .section_name:hover {
+	background-color: #421C52;
+	color: white;
+}
+
+.dropdown {
+	float: left;
+	width: 100px;
+}
+
+.dropdown ul {
+	position:absolute;
+	z-index:999;
+	list-style-type: none;
+	top:50px;
+}
+
+.dropdown ul li {
+	height:50px;
+	line-height: 50px;
+	width: 100px;
+	background-color: #BDAEC6;
+	
+	color: black;
+	text-align:center;
+
+    /* because it's a link */
+    cursor: pointer;
+}
+
+.dropdown ul li:hover {
 	background-color: #421C52;
 	color: white;
 }
