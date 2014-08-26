@@ -226,18 +226,18 @@ turn = function(){
 		var back, e;
 		elem = document.getElementById("instructions");
 		elem.innerHTML = "Instructions: <br> <br> The first player can go any where on the board that they would like. " +
-						"However, the move of the first player will limit where the next player can go. " +
-						"Bold lines on the board indicate divisions of the larger board. " +
+						"The move of the first player will limit where the next player can go. " +
+						"Bold lines indicate divisions of the large board. " +
 						"Non bold lines indicate divisions of the smaller boards. " +
 						"Wherever the first player goes in a small board translates to where the next player can go in the large board. " +
 						"Within the smaller tic tac toe boards, game play works the same as regular tic tac toe. " +
-						"If a player wins a small board, then they get their color filling that box. " +
+						"If a player wins a small board, their color fills that box. " +
 						"If a player is redirected to a board that has already been filled, " + 
 						"then they will be allowed to play anywhere that is unoccupied on the board." +
 						"<br><br>" +
-						"The objective of the game is to win on the larger board. " +
+						"Objective: win on the larger board. " +
 						"<br><br>" +
-						"(Click anywhere to go back to the game)";
+						"<em> (click anywhere to go back to the game) </em>";
 		elem.style.backgroundColor = "powderblue";
 		elem.style.position = "fixed";
 		instr_on = true;

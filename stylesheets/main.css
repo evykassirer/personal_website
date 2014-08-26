@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
 /* TOP BAR MENU */
 
 .topplaceholder {
@@ -15,7 +20,6 @@
     display:inline-block;
     position: fixed;
     z-index: 999;
-    overflow: hidden;
     width: 100%;
     background-color: #BDAEC6;
 
@@ -39,6 +43,7 @@
 .section_name {
     float: left;
     display:inline-block;
+    text-decoration: none;
     height:50px;
     line-height: 50px;
     width: 100px;
@@ -46,9 +51,6 @@
     
     color: black;
     text-align:center;
-
-    /* because it's a link */
-    cursor: pointer;
 }
 
 .section_name:hover {
@@ -76,13 +78,18 @@
     
     color: black;
     text-align:center;
+}
 
-    /* because it's a link */
-    cursor: pointer;
+.dropdown ul li a {
+    text-decoration: none;
+    color:black;
 }
 
 .dropdown ul li:hover {
     background-color: #421C52;
+}
+
+.dropdown ul li:hover a {
     color: white;
 }
 
@@ -104,54 +111,3 @@
     height:100%;
 }
 
-html, body{
-    width: 100%;
-    height: 100%;
-}
-
-
-/*FOR FRONT PAGE*/
-
-.header{
-    width:1200px;
-    margin:0px auto;
-	display: block;
-    color: #222;
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-decoration: none;
-	left: 300px;
-	position:fixed;
-}
-
-.mepic{
-    float: left;
-    position: relative;
-    width: 20%;
-    padding: 10px;
-}
-
-.mepic img {
-    width: 100%;
-}
-
-.intro{
-    float: left;
-    font-size: 14px;
-    position: relative;
-    display: inline-block;
-    text-align: left;
-	line-height:150%;
-    width: 50%;
-    padding: 20px;
-}
-
-.intro a {
-    text-decoration: none;
-    color: #421C52;
-}
-
-.intro a:hover {
-    text-decoration: underline;
-}
