@@ -3,6 +3,22 @@ h2 {
 	font-size: 40px;
 }
 
+p {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+/* Not all links, but ones like the link to my github */
+.link {
+	text-decoration: none;
+	color:purple;
+}
+
+.link:hover {
+	font-weight: bold;
+}
+
 #projects a {
 	text-decoration: none;
 	color: black;
@@ -19,13 +35,6 @@ h2 {
 
 .project h3 {
 	font-size: 25px;
-	text-align: center;
-}
-
-
-.project p {
-	padding-left: 10px;
-	padding-right: 10px;
 	text-align: center;
 }
 
