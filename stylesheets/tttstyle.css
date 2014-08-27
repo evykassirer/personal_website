@@ -75,5 +75,6 @@ a:hover {
 	left: 200px;
 	bottom: 100px;
     color: gray;
+    font-weight: lighter;
     font-size: 12px;
 }

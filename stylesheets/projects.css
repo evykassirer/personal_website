@@ -1,0 +1,58 @@
+h2 {
+	text-align: center;
+	font-size: 40px;
+}
+
+#projects a {
+	text-decoration: none;
+	color: black;
+}
+
+.project {
+	height:350px;
+	width:350px;
+	float:left;
+	background-color: white;
+	margin:20px;
+	position: relative;
+}
+
+.project h3 {
+	font-size: 25px;
+	text-align: center;
+}
+
+
+.project p {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+.project .smaller {
+	font-size: 12px;
+}
+
+.projectimage {
+	top:0;
+	bottom:0;
+	background-color: white;
+	z-index: 9;
+	position: absolute;
+}
+
+.project:hover .projectimage{
+	display:none;
+}
+
+.projectimage img {
+	vertical-align: middle;
+	max-width:100%; 
+	max-height:100%;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}

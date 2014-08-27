@@ -50,6 +50,10 @@ class ToDo(BaseHandler):
     def get(self):
       self.render("todo.html") 
 
+class Projects(BaseHandler):
+    def get(self):
+      self.render("projects.html") 
+
 class TicTacToe(BaseHandler):
     def get(self):
       self.render("tick-tack-toe.html")         
@@ -64,6 +68,7 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/udacity/?', MainUdacityPage),
                                 (r'/resume/?', Resume),
                                 (r'/todo/?', ToDo),
+                                (r'/projects/?', Projects),
                                 (r'/tictactoe/?', TicTacToe),
                                 (r'/extreme_tictactoe/?', XTicTacToe),
                                 (r'/birthday/?', BirthdayHandler),
