@@ -35,12 +35,7 @@ class MainPage(BaseHandler):
         
 class MainUdacityPage(BaseHandler):
     def get(self):
-        self.render("udacity/welcome.html")
-
-class RedirectHandler(BaseHandler):
-    def get(self):
-        url = self.request.get("url")
-        self.redirect(str(url))        
+        self.render("udacity/welcome.html")       
 
 class Resume(BaseHandler):
     def get(self):
@@ -65,12 +60,14 @@ class XTicTacToe(BaseHandler):
 PAGE_RE = r'((?:[a-zA-Z0-9_-]+/?)*)'
         
 app = webapp2.WSGIApplication([(r'/', MainPage),
-                                (r'/udacity/?', MainUdacityPage),
-                                (r'/resume/?', Resume),
                                 (r'/todo/?', ToDo),
                                 (r'/projects/?', Projects),
+                                (r'/resume/?', Resume),
                                 (r'/tictactoe/?', TicTacToe),
                                 (r'/extreme_tictactoe/?', XTicTacToe),
+                                (r'/404error/?', error404handler),
+                                #udacity course stuff
+                                (r'/udacity/?', MainUdacityPage),
                                 (r'/birthday/?', BirthdayHandler),
                                 (r'/thanks/?', ThanksHandler), 
                                 (r'/rot13/?', Rot13Handler),
@@ -83,8 +80,6 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/blog/login/?', LogInHandler),
                                 (r'/blog/logout/?', LogOutHandler),
                                 (r'/blog/flush/?', flushHandler),
-                                (r'/redirect/?', RedirectHandler),
-                                (r'/404error/?', error404handler),
                                 (r'/wiki/?', WikiFront),
                                 (r'/wiki/signup/?', WikiSignUpHandler),
                                 (r'/wiki/logout/?', WikiLogOutHandler),
