@@ -47,7 +47,7 @@ html, body{
     text-decoration: none;
     height:50px;
     line-height: 50px;
-    width: 100px;
+    width: 120px;
     background-color: #BDAEC6;
     
     color: black;
@@ -61,9 +61,10 @@ html, body{
 
 .dropdown {
     float: left;
-    width: 100px;
+    width: 120px;
 }
 
+/* FIX THE OTHER PAGES CODE THEN DELETE THIS */
 .dropdown ul {
     position:absolute;
     z-index:999;
@@ -74,7 +75,7 @@ html, body{
 .dropdown ul li {
     height:50px;
     line-height: 50px;
-    width: 100px;
+    width: 120px;
     background-color: #BDAEC6;
     
     color: black;
@@ -105,6 +106,41 @@ html, body{
     display:block;
 } 
 
+/* NEW DROPDOWN CODE */
+.dropdownlist {
+    position:absolute;
+    z-index:999;
+    list-style-type: none;
+    top:50px;
+}
+
+.dropdownlist a {
+    height:50px;
+    line-height: 50px;
+    width: 120px;
+    background-color: #BDAEC6;
+    display:none;
+    color: black;
+    text-align:center;
+    text-decoration: none;
+    color:black;
+}
+
+.dropdownlist a:hover {
+    background-color: #421C52;
+    color: white;
+}
+
+/* drop down part */
+.dropdownlist {
+    position:fixed;
+    font-size: 13px;
+}
+
+.dropdown:hover .dropdownlist a {
+    display:block;
+} 
+
 .pagebody{
     position:absolute;
     padding-top: 10px;
@@ -112,3 +148,14 @@ html, body{
     height:100%;
 }
 
+/* MENU BAR FOR MOBILE AND THIN SCREENS 
+when it's too small for the menu items:
+@media all and (max-width:1100px) { 
+   
+}
+make a drop down menu on click - don't list projects individually 
+
+when the screen is too small for my name and a menu, increase the height of the placeholder and make name and menu two rows
+when the menu drops, incrase the placeholder to the height of the menu
+
+*/
