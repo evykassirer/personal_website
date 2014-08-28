@@ -86,4 +86,5 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/wiki/login/?', WikiLogInHandler),
                                 (r'/wiki/_edit/' + PAGE_RE, WikiEditPost),
                                 (r'/wiki/' + PAGE_RE, WikiPostPage),
+                                (r'/.*', error404handler),
                                 ], debug=True)
