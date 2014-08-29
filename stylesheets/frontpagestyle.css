@@ -43,3 +43,24 @@
 .intro a:hover {
     text-decoration: underline;
 }
+
+@media all and (max-width:500px) { 
+   .pagebody{
+        width:90%;
+    }
+    .mepic{
+        float:none;
+        width:100%;
+   }
+   .mepic img {
+        width:50%;
+        padding:10px;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+   }
+   .intro {
+        float: none;
+        width:100%;
+   }
+}
