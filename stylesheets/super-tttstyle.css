@@ -1,9 +1,9 @@
-a{
+.pagebody a{
 	color: gray;
     text-decoration: none;
 }
 
-a:hover {
+.pagebody a:hover {
 	color:purple;
 }
 

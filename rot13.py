@@ -13,28 +13,41 @@ rot13 = """<!DOCTYPE html>
         <link type="text/css" rel="stylesheet" href="/stylesheets/udacity.css" />
         <link rel="shortcut icon" type="image/jpeg" href="/static/E.png" />
         <title>Unit 2 Rot 13</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    
     <body>
         <div class="toptoolbar"> 
-            <div id="my_name">Evy Kassirer</div> 
+            <a class = "my_name" href='/'>Evy Kassirer</a> 
             <a class = "section_name" href='/'>About</a>
             <a class = "section_name" href='https://evykassirer.wordpress.com/' target= '_blank'>Blog</a>
             <a class = "section_name" href='/resume' target='_blank'>Resume</a>
             <div class = "dropdown">
                 <a class = "section_name" href='/projects'>Projects</a>
-                <ul>
-                    <li><a href='http://davepagurek.com/yc/' target='_blank'>Code Next</a></li>
-                    <li><a href='/tictactoe'>Tic Tac Toe</a></li>
-                    <li><a href='/udacity'>Web Dev</a></li> 
-                    <!-- Web Development - Udacity Course Projects ~~ need to fix line wrapping issue  --> 
-                    <li><a href='/todo'>Future learning</a></li> <!-- Programming To Do List <br> && Coding Resources -->
-                    <!-- put what languages are on the projects ~~ maybe make a projects page-->
-                </ul>
+                <div class = "dropdownlist">
+                    <a href='http://davepagurek.com/yc/' target='_blank'>Code Next</a>
+                    <a href='/tictactoe'>Tic Tac Toe</a>
+                    <a href='/udacity'>Web Dev</a>
+                    <a href='/todo'>Future learning</a>
+                </div>
             </div>
             <a class = "section_name" href='https://github.com/evykassirer/', '_blank'>GitHub</a>
             <a class = "section_name" href='http://ca.linkedin.com/in/ekassirer/', '_blank'>LinkedIn</a>
             <a class = "section_name" href='mailto:evy.kassirer@gmail.com' target='_blank'>Email</a>
+        </div>
+        <div class="toptoolbarsmall"> 
+            <div class="my_name">Evy Kassirer</div> 
+            <div class = "dropdown">
+                <a class = "section_name" href='/projects'>Menu</a>
+                <div class = "dropdownlist">
+                    <a href='/'>About</a>
+                    <a href='https://evykassirer.wordpress.com/' target= '_blank'>Blog</a>
+                    <a href='/resume' target='_blank'>Resume</a>
+                    <a href='/projects'>Projects</a>
+                    <a href='https://github.com/evykassirer/', '_blank'>GitHub</a>
+                    <a href='http://ca.linkedin.com/in/ekassirer/', '_blank'>LinkedIn</a>
+                    <a href='mailto:evy.kassirer@gmail.com' target='_blank'>Email</a>
+                </div>
+            </div>
         </div>
         <div class="topplaceholder"></div>
         <div class="pagebody">

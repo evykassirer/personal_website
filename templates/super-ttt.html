@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-		<title>EXTREME Tic Tac Toe</title>
+{% extends "template.html" %}
+{% block csstitle %}
 		<link type="text/css" rel="stylesheet" href="/stylesheets/super-tttstyle.css" />
-        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
-        <link rel="shortcut icon" type="image/jpeg" href="/static/E.png" />
-    </head>
-	<body class="body">
-		<div class="toptoolbar"> 
-			<div id="my_name">Evy Kassirer</div> 
-	  		<a class = "section_name" href='/'>About</a>
-	  		<a class = "section_name" href='https://evykassirer.wordpress.com/' target= '_blank'>Blog</a>
-	  		<a class = "section_name" href='/resume' target='_blank'>Resume</a>
-	  		<div class = "dropdown">
-	  			<a class = "section_name" href='/projects'>Projects</a>
-	  			<ul>
-                    <li><a href='http://davepagurek.com/yc/' target='_blank'>Code Next</a></li>
-                    <li><a href='/tictactoe'>Tic Tac Toe</a></li>
-                    <li><a href='/udacity'>Web Dev</a></li> 
-                    <li><a href='/todo'>Future learning</a></li>
-                </ul>
-	  		</div>
-	 		<a class = "section_name" href='https://github.com/evykassirer/', '_blank'>GitHub</a>
-	 		<a class = "section_name" href='http://ca.linkedin.com/in/ekassirer/', '_blank'>LinkedIn</a>
-	 		<a class = "section_name" href='mailto:evy.kassirer@gmail.com' target='_blank'>Email</a>
-		</div>
-		<div class="topplaceholder"></div>
-		<div class="pagebody">
+		<title>EXTREME Tic Tac Toe</title>
+{% endblock %}
+{% block body %}
 			<div id = "board">
 			<!-- the parts in the board are added dynamically with javascript because it's annoying to type it all out -->
 			</div>
@@ -50,8 +27,5 @@
 			<div id="instructions"></div>
 			<script src="/js/super-tttscript.js">			
 			</script>
-		</div>
-	</body>
-</html>
-
+{% endblock %}
 

@@ -25,7 +25,7 @@ html, body{
     background-color: #BDAEC6;
 }
 
-#my_name {
+.my_name {
     float: left;
     display:inline-block;
     height:50px;
@@ -35,7 +35,7 @@ html, body{
     
     color: black;
     text-align:center;
-
+    text-decoration: none;
     font-size: 20px;
     font-weight: bold;
 }
@@ -63,49 +63,6 @@ html, body{
     width: 120px;
 }
 
-/* FIX THE OTHER PAGES CODE THEN DELETE THIS */
-.dropdown ul {
-    position:absolute;
-    z-index:999;
-    list-style-type: none;
-    top:50px;
-}
-
-.dropdown ul li {
-    height:50px;
-    line-height: 50px;
-    width: 120px;
-    background-color: #BDAEC6;
-    
-    color: black;
-    text-align:center;
-}
-
-.dropdown ul li a {
-    text-decoration: none;
-    color:black;
-}
-
-.dropdown ul li:hover {
-    background-color: #421C52;
-}
-
-.dropdown ul li:hover a {
-    color: white;
-}
-
-/* drop down part */
-.dropdown ul {
-    position:fixed;
-    display:none;
-    font-size: 13px;
-}
-
-.dropdown:hover ul {
-    display:block;
-} 
-
-/* NEW DROPDOWN CODE */
 .dropdownlist {
     position:absolute;
     z-index:999;
@@ -153,4 +110,27 @@ html, body{
     z-index: 999;
     width: 100%;
     background-color: #BDAEC6;
+}
+
+/* MENU BAR FOR MOBILE AND THIN SCREENS 
+when it's too small for the menu items: */
+@media all and (max-width:1100px) { 
+   .toptoolbar {
+        display: none;
+   }
+   .toptoolbarsmall {
+        display:block;
+   }
+   .dropdown {
+        position: fixed;
+        left:50%;
+   }
+}
+/* make the drop down menu expand on click instead? */ 
+
+@media all and (max-width:450px) { 
+   .my_name {
+    font-size: 15px;
+    width: 150px;
+   }
 }

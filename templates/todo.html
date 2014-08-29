@@ -1,48 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    	<link rel="stylesheet" type="text/css" href="/stylesheets/tempnew.css" />
+{% extends "template.html" %}
+{% block csstitle %}
 		<link type="text/css" rel="stylesheet" href="/stylesheets/todostyle.css" />
-		<link rel="shortcut icon" type="image/jpeg" href="/static/E.png" />
-		<!-- <link rel="shortcut icon" type="image/png" href="http://art1914.com/light-bulb-drawn-blue3.png" /> -->
 		<title>Programming TO DO && Coding Resources</title> 		
-    </head>
-    <body>
-    	<div class="toptoolbar"> 
-			<a class = "my_name" href='/'>Evy Kassirer</a> 
-	  		<a class = "section_name" href='/'>About</a>
-	  		<a class = "section_name" href='https://evykassirer.wordpress.com/' target= '_blank'>Blog</a>
-	  		<a class = "section_name" href='/resume' target='_blank'>Resume</a>
-	  		<div class = "dropdown">
-	  			<a class = "section_name" href='/projects'>Projects</a>
-	  			<div class = "dropdownlist">
-                    <a href='http://davepagurek.com/yc/' target='_blank'>Code Next</a>
-                    <a href='/tictactoe'>Tic Tac Toe</a>
-                    <a href='/udacity'>Web Dev</a>
-                    <a href='/todo'>Future learning</a>
-                </div>
-	  		</div>
-	 		<a class = "section_name" href='https://github.com/evykassirer/', '_blank'>GitHub</a>
-	 		<a class = "section_name" href='http://ca.linkedin.com/in/ekassirer/', '_blank'>LinkedIn</a>
-	 		<a class = "section_name" href='mailto:evy.kassirer@gmail.com' target='_blank'>Email</a>
-		</div>
-		<div class="toptoolbarsmall"> 
-			<div class="my_name">Evy Kassirer</div> 
-			<div class = "dropdown">
-				<a class = "section_name" href='/projects'>Menu</a>
-				<div class = "dropdownlist">
-			  		<a href='/'>About</a>
-			  		<a href='https://evykassirer.wordpress.com/' target= '_blank'>Blog</a>
-			  		<a href='/resume' target='_blank'>Resume</a>
-			  		<a href='/projects'>Projects</a>
-	  		 		<a href='https://github.com/evykassirer/', '_blank'>GitHub</a>
-	 				<a href='http://ca.linkedin.com/in/ekassirer/', '_blank'>LinkedIn</a>
-	 				<a href='mailto:evy.kassirer@gmail.com' target='_blank'>Email</a>
-	 			</div>
-	 		</div>
-		</div>
-		<div class="topplaceholder"></div>
-		<div class="pagebody">
+{% endblock %}
+{% block body %}
 			<h1> Programming TO DO && Coding Resources ~ a collection of links and things to do</h1>
 			<br>
 			<h2> Current/Soon Projects </h2>
@@ -77,7 +38,6 @@
 					<li> Code the blog into my website</li>
 					<li> Add <a href=https://www.google.com/fonts>open source fonts</a></li>
 					<li> Take out line breaks in my code where there's no text, and use padding instead (hooray for learning better coding form) </li>
-					<li> Use templates better - the toolbar thing shouldn't have to be copy/pasted every time I make a change. <a href=http://www.htmlgoodies.com/beyond/webmaster/article.php/3473341>This</a> is probably what I need.</li>
 					<li> Make an html copy of my resume </li>				
 					<li>
 						<a href=https://www.udacity.com/wiki/cs253> 
@@ -309,8 +269,5 @@
 					<a href=http://developer.qt.nokia.com/doc/qt-4.8/gettingstartedqt.html>  1 </a> &nbsp;
 					<a href=https://qt.gitorious.org/qt/qt/trees/4.8/examples/tutorials/gettingStarted/gsQt>  2 </a> 				
 				</li>
-				
 			</ul>
-		</div>
-    </body>
-</html>
+{% endblock %}
