@@ -12,7 +12,7 @@
 	  		<a class = "section_name" href='/'>About</a>
 	  		<a class = "section_name" href='https://evykassirer.wordpress.com/' target= '_blank'>Blog</a>
 	  		<a class = "section_name" href='/resume' target='_blank'>Resume</a>
-	  		<div class = "dropdown">
+	  		<div class = "dropdown hoveropen">
 	  			<a class = "section_name" href='/projects'>Projects</a>
 	  			<div class = "dropdownlist">
                     <a href='http://davepagurek.com/yc/' target='_blank'>Code Next</a>
@@ -26,10 +26,10 @@
 	 		<a class = "section_name" href='mailto:evy.kassirer@gmail.com' target='_blank'>Email</a>
 		</div>
 		<div class="toptoolbarsmall"> 
-			<div class="my_name">Evy Kassirer</div> 
-			<div class = "dropdown">
-				<a class = "section_name" href='/projects'>Menu</a>
-				<div class = "dropdownlist">
+			<a class = "my_name" href='/'>Evy Kassirer</a> 
+			<div class = "dropdown clickopen">
+				<div class = "section_name">Menu</div>
+				<div class = "dropdownlist clicklist">
 			  		<a href='/'>About</a>
 			  		<a href='https://evykassirer.wordpress.com/' target= '_blank'>Blog</a>
 			  		<a href='/resume' target='_blank'>Resume</a>
@@ -43,6 +43,7 @@
 		<div class="topplaceholder"></div>
 		<div class="pagebody">
 			{% block body %}{% endblock %}
+			<script src="/js/main.js"></script>
 		</div>
 	</body>
 </html>

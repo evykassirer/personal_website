@@ -64,10 +64,11 @@ html, body{
 }
 
 .dropdownlist {
-    position:absolute;
+    position:fixed;
     z-index:999;
     list-style-type: none;
     top:50px;
+    font-size: 13px;
 }
 
 .dropdownlist a {
@@ -88,12 +89,7 @@ html, body{
 }
 
 /* drop down part */
-.dropdownlist {
-    position:fixed;
-    font-size: 13px;
-}
-
-.dropdown:hover .dropdownlist a {
+.hoveropen:hover .dropdownlist a {
     display:block;
 } 
 
@@ -130,7 +126,7 @@ when it's too small for the menu items: */
 
 @media all and (max-width:450px) { 
    .my_name {
-    font-size: 15px;
-    width: 150px;
+        font-size: 15px;
+        width: 150px;
    }
 }
