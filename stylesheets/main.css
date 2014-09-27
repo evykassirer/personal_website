@@ -22,7 +22,7 @@ html, body{
     position: fixed;
     z-index: 999;
     width: 100%;
-    background-color: #BDAEC6;
+    background-color: #B5A2C8;
 }
 
 .my_name {
@@ -31,7 +31,7 @@ html, body{
     height:50px;
     line-height: 50px;
     width: 200px;
-    background-color: #BDAEC6;
+    background-color: #B5A2C8;
     
     color: black;
     text-align:center;
@@ -47,7 +47,7 @@ html, body{
     height:50px;
     line-height: 50px;
     width: 120px;
-    background-color: #BDAEC6;
+    background-color: #B5A2C8;
     
     color: black;
     text-align:center;
@@ -75,7 +75,7 @@ html, body{
     height:50px;
     line-height: 50px;
     width: 120px;
-    background-color: #BDAEC6;
+    background-color: #B5A2C8;
     display:none;
     color: black;
     text-align:center;
