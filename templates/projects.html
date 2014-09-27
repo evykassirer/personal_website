@@ -6,12 +6,15 @@
 {% block body %}
 			<h2>Projects</h2>
 			<br>
-			<p> These are some of the projects I've been working on that are web based. To see a full list of what I've been working on, as well as my code, check out <a class="link" href=http://github.com/evykassirer>my github</a>.</p>
+			<p> These are some of the projects I've been working on. To see a full list, as well as my code, check out <a class="link" href=http://github.com/evykassirer>my github</a>.</p>
+			<br>
+			<p> There is still so much I want to do! Check out my <a class="link" href="/todo"> list of things I want to work on soon, and all the resources and cool stuff I've found over the years. </a> </p> 
 			<br>
 			<div id="projects">
 				<a href='http://davepagurek.com/yc/' target='_blank' class="project">
 					<br>
 					<h3>CodeNext</h3>
+					<br>
 					<p>There are a lot of learning materials to choose from. We narrow it down.</p>
 					<br>
 					<p><em>Technologies: <br> PHP, Mysql, HTML, CSS, Javascript </em></p>
@@ -24,9 +27,26 @@
 					</div>
 				</a>
 
+				<a href='https://github.com/evykassirer/TextFormat' target='_blank' class="project">
+					<br>
+					<h3>Text Format</h3>
+					<br>
+					<p>Accessibility extension to allow low vision users to change the style of the text on a webpage.</p>
+					<br>
+					<p><em>Technologies: <br> HTML, CSS, Javascript </em></p>
+					<br>
+					<p>Why: Started at an accessibility hackathon with my Google team. There was a need for an extension that would change text spacing. I also added  toggling of bold and italics.</p>
+					<br>
+					<p>To Do: ability to save/load settings, request code review for good style and comments.</p>			
+					<div class="projectimage">
+						<span class="helper"></span><img src="/static/textformat.png" alt="CodeNext website logo and 'I want to learn' button"/>
+					</div>
+				</a>
+
 				<a href='/tictactoe' class="project">
 					<br>
 					<h3>Tic Tac Toe</h3>
+					<br>
 					<p> A more challenging and strategy requiring twist on a classic childhood game. </p>
 					<br>
 					<p><em>Technologies: <br> HTML, CSS, Javascript</em></p>
@@ -42,6 +62,7 @@
 				<a href='/udacity' class="project">
 					<br>
 					<h3>Udacity Web Development Course Projects</h3>
+					<br>
 					<p>Web application developed from self learning course. Some silly form validation projects, a "blog" (guestbook), and a wiki. </p>
 					<br>
 					<p class="smaller"><em>Technologies: GoogleAppEngine, Python, webapp2, GSQL <br><br>
@@ -53,15 +74,35 @@
 					</div>
 				</a>
 
-				<a href='/todo' class="project">
+				<a href='/https://github.com/evykassirer/RSA' class="project">
 					<br>
-					<h3>Programming To Do List and Coding Resources</h3>
-					<br><br>
-					<p>A list of things I want to work on soon, and all the resources and cool stuff I've found over the years.</p>
-					<br>	
+					<h3>RSA Implementation</h3>
+					<br>
+					<p>Implemented RSA model learned in algebra class with a functional programming language. Uses number encrypting to encrypt/decrypt strings of any length. </p>
+					<br>
+					<p>Why: Fun, easy, and awesome.</p>
+					<br>
 					<div class="projectimage">
-						<span class="helper"></span><img src="/static/todo.png" alt="Programming To Do List and Coding Resources"/>
+						<span class="helper"></span><img src="/static/RSA.png" alt="RSA Implementation"/>
 					</div>
 				</a>
+
+				<a href='/https://github.com/evykassirer/FlowersofHanoi' class="project">
+					<br>
+					<h3>Flowers of Hanoi</h3>
+					<br>
+					<p>Towers of Hanoi game implemented with linked list stacks to store the towers. Modes for both computer and user to solve puzzle with up to 9 leaves. </p>
+					<br>
+					<p><em>Technologies: C++, Allegro </em></p>
+					<br>
+					<p>Why: 12th grade project for Computer Science class.</p>
+					<br>
+					<div class="projectimage">
+						<span class="helper"></span><img src="/static/hanoi.jpg" alt="RSA Implementation"/>
+					</div>
+				</a>
+
+
 			</div>
+			<script src="/js/projects.js"></script>
 {% endblock %}

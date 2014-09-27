@@ -122,7 +122,6 @@ when it's too small for the menu items: */
         left:50%;
    }
 }
-/* make the drop down menu expand on click instead? */ 
 
 @media all and (max-width:450px) { 
    .my_name {
