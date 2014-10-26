@@ -117,7 +117,7 @@ class NewPost(BaseHandler):
             id = p.key().id()
             time.sleep(0.1)
             get_posts(True)
-            self.redirect("/blog/post/" + str(id))
+            self.redirect("/udacity/blog/post/" + str(id))
         else:
             error = "Please enter both a title and a body for your blog post!"
             self.render_newpost(title, body, error)

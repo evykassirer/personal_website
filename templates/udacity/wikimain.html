@@ -8,28 +8,28 @@
 				<a href = "/udacity" id="sidebartitle"> Projects: </a>
 				<br>
 		        <br>
-		        <a href = "/rot13">Rot13</a>
+		        <a href = "/udacity/rot13">Rot13</a>
 		        <br>
-		        <a href = "/birthday">Do you know your birthday?</a>
+		        <a href = "/udacity/birthday">Do you know your birthday?</a>
 		        <br>
-				<a href = "/asciichan">ASCIICHAN!</a>
+				<a href = "/udacity/asciichan">ASCIICHAN!</a>
 				<br>
-				<a href = "/blog">The blog (main course project)</a>
+				<a href = "/udacity/blog">The blog (main course project)</a>
 				<br>
-				<a href = "/wiki">Wiki (course exam)</a>
+				<a href = "/udacity/wiki">Wiki (course exam)</a>
 			</div>
 			<div class="content">
-				<a href="/wiki" class="main-title">Wiki</a>
+				<a href="/udacity/wiki" class="main-title">Wiki</a>
 				<div class="pagebody">
 				Add / with the name of the page you'd like to see/edit to the end of the url</a>
 				</div>
 				
 				<div class="topbar">
 				{% if user %}
-				Logged in as <b>{{user}}<b> (<a href="/wiki/logout">logout</a>)
+				Logged in as <b>{{user}}<b> (<a href="/udacity/wiki/logout">logout</a>)
 				{% endif %}
 				{% if not user %}
-				<a href="/wiki/login">login</a> | <a href="/wiki/signup">signup</a>
+				<a href="/udacity/wiki/login">login</a> | <a href="/udacity/wiki/signup">signup</a>
 				{% endif%}
 				</div>
 			</div>

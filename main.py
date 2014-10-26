@@ -40,6 +40,10 @@ class MainUdacityPage(BaseHandler):
 class Resume(BaseHandler):
     def get(self):
       self.render("resume.html") 
+
+class Draft(BaseHandler):
+    def get(self):
+      self.render("draft.html")
       
 class ToDo(BaseHandler):
     def get(self):
@@ -56,35 +60,50 @@ class TicTacToe(BaseHandler):
 class XTicTacToe(BaseHandler):
     def get(self):
       self.render("super-ttt.html") 
+
+class blogMain(BaseHandler):
+    def get(self):
+      self.render("blog.html") 
+
+class blogPost(BaseHandler):
+    def get(self, post_id):
+        if (post_id == "so-youre-gonna-be-a-tech-major" or post_id == "ability-to-learn-curiosity" or post_id == "first-hackathon") :
+            self.render("blog-post-"+post_id+".html")
+        else:
+            self.redirect("/blog")
       
 PAGE_RE = r'((?:[a-zA-Z0-9_-]+/?)*)'
         
 app = webapp2.WSGIApplication([(r'/', MainPage),
+                                #udacity course stuff
+                                (r'/udacity/?', MainUdacityPage),
+                                (r'/udacity/birthday/?', BirthdayHandler),
+                                (r'/udacity/thanks/?', ThanksHandler), 
+                                (r'/udacity/rot13/?', Rot13Handler),
+                                (r'/udacity/asciichan/?', AsciichanHandler),
+                                (r'/udacity/blog?(?:/\.json)?', BlogFront),
+                                (r'/udacity/blog/newpost/?', NewPost),
+                                (r'/udacity/blog/post/(\d+)(?:\.json)?', PostPage),
+                                (r'/udacity/blog/signup/?', SignUpHandler), 
+                                (r'/udacity/blog/welcome/?', WelcomeHandler),
+                                (r'/udacity/blog/login/?', LogInHandler),
+                                (r'/udacity/blog/logout/?', LogOutHandler),
+                                (r'/udacity/blog/flush/?', flushHandler),
+                                (r'/udacity/wiki/?', WikiFront),
+                                (r'/udacity/wiki/signup/?', WikiSignUpHandler),
+                                (r'/udacity/wiki/logout/?', WikiLogOutHandler),
+                                (r'/udacity/wiki/login/?', WikiLogInHandler),
+                                (r'/udacity/wiki/_edit/' + PAGE_RE, WikiEditPost),
+                                (r'/udacity/wiki/' + PAGE_RE, WikiPostPage),
+                                #my stuff
                                 (r'/todo/?', ToDo),
+                                (r'/blog/?', blogMain),
+                                (r'/blog/(.*)/?', blogPost),
                                 (r'/projects/?', Projects),
                                 (r'/resume/?', Resume),
+                                (r'/draft/?', Draft),
                                 (r'/tictactoe/?', TicTacToe),
                                 (r'/extreme_tictactoe/?', XTicTacToe),
                                 (r'/404error/?', error404handler),
-                                #udacity course stuff
-                                (r'/udacity/?', MainUdacityPage),
-                                (r'/birthday/?', BirthdayHandler),
-                                (r'/thanks/?', ThanksHandler), 
-                                (r'/rot13/?', Rot13Handler),
-                                (r'/asciichan/?', AsciichanHandler),
-                                (r'/blog?(?:/\.json)?', BlogFront),
-                                (r'/blog/newpost/?', NewPost),
-                                (r'/blog/post/(\d+)(?:\.json)?', PostPage),
-                                (r'/blog/signup/?', SignUpHandler), 
-                                (r'/blog/welcome/?', WelcomeHandler),
-                                (r'/blog/login/?', LogInHandler),
-                                (r'/blog/logout/?', LogOutHandler),
-                                (r'/blog/flush/?', flushHandler),
-                                (r'/wiki/?', WikiFront),
-                                (r'/wiki/signup/?', WikiSignUpHandler),
-                                (r'/wiki/logout/?', WikiLogOutHandler),
-                                (r'/wiki/login/?', WikiLogInHandler),
-                                (r'/wiki/_edit/' + PAGE_RE, WikiEditPost),
-                                (r'/wiki/' + PAGE_RE, WikiPostPage),
                                 (r'/.*', error404handler),
                                 ], debug=True)

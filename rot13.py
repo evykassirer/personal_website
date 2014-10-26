@@ -55,15 +55,15 @@ rot13 = """<!DOCTYPE html>
         		<a href = "/udacity" id="sidebartitle"> Projects: </a>
         		<br>
                 <br>
-                <a href = "/rot13">Rot13</a>
+                <a href = "/udacity/rot13">Rot13</a>
                 <br>
-                <a href = "/birthday">Do you know your birthday?</a>
+                <a href = "/udacity/birthday">Do you know your birthday?</a>
                 <br>
-        		<a href = "/asciichan">ASCIICHAN!</a>
+        		<a href = "/udacity/asciichan">ASCIICHAN!</a>
         		<br>
-        		<a href = "/blog">The blog (main course project)</a>
+        		<a href = "/udacity/blog">The blog (main course project)</a>
         		<br>
-        		<a href = "/wiki">Wiki (course exam)</a>
+        		<a href = "/udacity/wiki">Wiki (course exam)</a>
             </div>
             <div class="content">
                 Enter some text to ROT13:

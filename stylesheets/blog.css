@@ -1,0 +1,84 @@
+.pagebody {
+	width: 70%;
+	left: 15%;
+}
+
+.blog-post {
+	width: 100%;
+	margin-top: 30px;
+	line-height: 1.8;
+	background-color: white;
+    padding: 10px 35px;
+    box-shadow: 3px 3px 15px  #888888;
+}
+
+.blog-post ul {
+	margin-left: 30px;
+}
+
+.blog-post p {
+	margin-left: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px; 
+}
+
+.blog-post h2 {
+	margin-left: 10px;
+}
+
+.blog-post h3 {
+	margin-top: 30px;
+	margin-bottom: -10px;
+}
+
+.blog-post h4 {
+	margin-top: 30px;
+	margin-bottom: -10px;
+}
+
+
+blockquote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+} 
+
+.blog-title {
+	color: #0D4F8B;
+}
+
+.date {
+	color: grey;
+}
+
+
+
+
+
+.post-title {
+	font-size: 30px;
+	margin: 10px 0px;
+}
+
+.post-title:hover {
+	text-decoration: underline;
+}
+
+.post-description {
+	width: 80%;
+}
+
+.post-link {
+	color: black;
+	text-decoration: none;
+}
+
+.box {
+	background-color: white;
+    padding: 25px 35px;
+    padding-bottom: 30px;
+    margin: 30px;
+    box-shadow: 3px 3px 15px  #888888;
+}
