@@ -13,7 +13,8 @@
 }
 
 .blog-post ul {
-	margin-left: 30px;
+	margin-left: 40px;
+	margin-top: -10px;
 }
 
 .blog-post p {
@@ -53,7 +54,19 @@ blockquote {
 	color: grey;
 }
 
+.center-block {
+	text-align: center;
+}
 
+.center-block img {
+	display:inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.center-block p {
+	text-align: center;
+}
 
 
 
@@ -64,6 +77,12 @@ blockquote {
 
 .post-title:hover {
 	text-decoration: underline;
+}
+
+.post-date{
+	color: grey;
+	margin-top: -5px;
+	margin-bottom: 10px;
 }
 
 .post-description {
@@ -81,4 +100,24 @@ blockquote {
     padding-bottom: 30px;
     margin: 30px;
     box-shadow: 3px 3px 15px  #888888;
+}
+
+@media all and (max-width:450px) { 
+   .post-title {
+        font-size: 20px;
+   }
+   .post-date{
+   		font-size: 15px;
+   }
+   .post-description {
+   		font-size: 15px;
+   		width: 95%;
+   }
+   .box {
+   	margin-left: 3px;
+   	margin-right: 3px;
+   }
+   .pagebody {
+   		width: 95%;
+   }
 }

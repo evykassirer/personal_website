@@ -67,7 +67,7 @@ class blogMain(BaseHandler):
 
 class blogPost(BaseHandler):
     def get(self, post_id):
-        if (post_id == "so-youre-gonna-be-a-tech-major" or post_id == "ability-to-learn-curiosity" or post_id == "first-hackathon") :
+        if (post_id == "so-youre-gonna-be-a-tech-major" or post_id == "ability-to-learn-curiosity" or post_id == "first-hackathon" or post_id == "practicing") :
             self.render("blog-post-"+post_id+".html")
         else:
             self.redirect("/blog")
