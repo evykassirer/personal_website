@@ -1,6 +1,3 @@
-#to do
-#link back to main on each page
-
 import os
 import webapp2
 import cgi
@@ -14,6 +11,7 @@ from login import LogInHandler, LogOutHandler
 from wiki import WikiFront, WikiPostPage, WikiEditPost
 from wikisignup import WikiSignUpHandler
 from wikilogin import WikiLogInHandler, WikiLogOutHandler
+
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -67,7 +65,7 @@ class blogMain(BaseHandler):
 
 class blogPost(BaseHandler):
     def get(self, post_id):
-        if (post_id == "so-youre-gonna-be-a-tech-major" or post_id == "ability-to-learn-curiosity" or post_id == "first-hackathon" or post_id == "practicing") :
+        if (os.path.isfile("templates/blog-post-"+post_id+".html")) :
             self.render("blog-post-"+post_id+".html")
         else:
             self.redirect("/blog")
