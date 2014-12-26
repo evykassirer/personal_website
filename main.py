@@ -34,14 +34,6 @@ class MainPage(BaseHandler):
 class MainUdacityPage(BaseHandler):
     def get(self):
         self.render("udacity/welcome.html")       
-
-class Resume(BaseHandler):
-    def get(self):
-      self.render("resume.html") 
-
-class Draft(BaseHandler):
-    def get(self):
-      self.render("draft.html")
       
 class ToDo(BaseHandler):
     def get(self):
@@ -98,8 +90,6 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/blog/?', blogMain),
                                 (r'/blog/(.*)/?', blogPost),
                                 (r'/projects/?', Projects),
-                                (r'/resume/?', Resume),
-                                (r'/draft/?', Draft),
                                 (r'/tictactoe/?', TicTacToe),
                                 (r'/extreme_tictactoe/?', XTicTacToe),
                                 (r'/404error/?', error404handler),
