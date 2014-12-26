@@ -1,9 +1,16 @@
 {% extends "template.html" %}
 {% block csstitle %}
         <link rel="stylesheet" type="text/css" href="/stylesheets/blog.css" />
+        <link rel="alternate" type="application/rss+xml" href="/static/rss-feed.xml" title="Evy Kassirer - Blog">
 		<title>Evy Kassirer - Blog</title> 
 {% endblock %}
 {% block body %}
+
+<div class="center-block">
+		<a href="/blog/rss.xml"> <img src="http://www.w3schools.com/rss/xml.gif"></a>
+		<a  class="post-link" href="http://feeds.feedburner.com/EvyKassirer">Suscribe!</a>
+</div>
+
 <div class="box">
 	<a class="post-link" href="/blog/practicing">
 		<div class="post-title" > Practicing the Tough Stuff --> Loving the Tough Stuff &#8594; </div>
@@ -13,8 +20,8 @@
 			In this post I discuss my frustrations with practicing, why it is still so important, and how it has positively influenced my experiences.
 		</div>
 	</a>
-	</div>
-	<div class="box">
+</div>
+<div class="box">
 	<a class="post-link" href="/blog/so-youre-gonna-be-a-tech-major">
 		<div class="post-title" > So You're Gonna Be A Tech Major &#8594; </div>
 		<div class="post-date">August 29, 2014</div>

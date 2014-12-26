@@ -57,7 +57,11 @@
 		<div class="topplaceholder"></div>
 		<div class="pagebody">
 			<h1 class="blog-title">{% block blog_title %}{% endblock %}</h1>
-			<p class="date">{% block date %}{% endblock %}</p>
+			</br>
+			<span class="date">{% block date %}{% endblock %}</span>
+			&emsp;
+			<a href="/blog/rss.xml"> <img src="http://www.w3schools.com/rss/xml.gif"></a> &nbsp;
+			<a  class="post-link" href="http://feeds.feedburner.com/EvyKassirer">Suscribe!</a>
 			<div class="blog-post">
 			{% block body %}{% endblock %}
 			</div>

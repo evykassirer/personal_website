@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Evy Kassirer - Blog</title>
+	<link>http://www.evykassirer.com/blog</link>
+	<image>
+		<title>Evy Kassirer - Blog</title>
+    	<url>http://www.evykassirer.com/static/evy.jpg</url>
+   		<link>http://www.evykassirer.com/blog</link>
+	</image>
+	<description>
+		Tech, education, music, and other things I am passionate about.
+	</description>
+
+	<item>
+		<title>Practicing the Tough Stuff --> Loving the Tough Stuff</title>
+		<link>http://www.evykassirer.com/blog/practicing</link>
+		<guid>http://www.evykassirer.com/blog/practicing</guid>
+		<pubDate>Thu, 04 Dec 2014 00:00:00 GMT</pubDate>
+		<description>I have been very involved in music for the majority of my life, but have never particularly enjoyed individual practice. Still, it is very important and has positively influenced my experiences.</description>
+	</item>
+	<item>
+		<title>So You're Gonna Be A Tech Major?</title>
+		<link>http://www.evykassirer.com/blog/so-youre-gonna-be-a-tech-major</link>
+		<guid>http://www.evykassirer.com/blog/so-youre-gonna-be-a-tech-major</guid>
+		<pubDate>Fri, 29 Aug 2014 00:00:00 GMT</pubDate>
+		<description>Are you about to begin a degree in Computer Science? Engineering? Math? Awesome. I hope to highlight some of the important parts of being a tech major, what to expect, and how to succeed.</description>
+	</item>
+	<item>
+		<title>Ability To Learn - Curiosity</title>
+		<link>http://www.evykassirer.com/blog/ability-to-learn-curiosity</link>
+		<guid>http://www.evykassirer.com/blog/ability-to-learn-curiosity</guid>
+		<pubDate>Fri, 01 Aug 2014 00:00:00 GMT</pubDate>
+		<description>There's one common theme in what I think is really effective for being satisfied and finding success, especially in technical fields like CS : the ability to learn – specifically, being curious and asking questions. </description>
+	</item>
+	<item>
+		<title>First Hackathon - BroncoHack</title>
+		<link>http://www.evykassirer.com/blog/first-hackathon</link>
+		<guid>http://www.evykassirer.com/blog/first-hackathon</guid>
+		<pubDate>Mon, 26 May 2014 00:00:00 GMT</pubDate>
+		<description>While I'm in the Bay Area for co-op, I want to really take advantage of all the tech and coding opportunities around me - and this was a great start to my summer. And I want to share my first hackathon experience and recommendations to start off this blog! </description>
+	</item>
+</channel>
+</rss>
