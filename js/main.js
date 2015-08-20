@@ -1,12 +1,17 @@
 var dropdown = document.getElementsByClassName('clickopen');
 var list = document.getElementsByClassName('clicklist');
-if (list)
-	var parent = list[0]
+var dropdown_button = document.getElementsByClassName('dropdown_button')[0];
+if (list) {
+	var parent = list[0];
 	var links = parent.children; 
+}
 if (dropdown && list && links) {
 	dropdown[0].onclick = function() {
 		var open = parent.className.indexOf("open");
+		console.log(dropdown_button);
 		if (open == -1) {
+			dropdown_button.style.backgroundColor = "#421C52";
+			dropdown_button.style.color = "#FFFFFF";
 			for(var i = 0; i < links.length; i++) {
 				if ((window.innerHeight < 400 && links[i].className == "removefirst")){
 					links[i].style.display = "none";
@@ -20,6 +25,8 @@ if (dropdown && list && links) {
 			parent.className = parent.className + " open";
 		}
 		else {
+			dropdown_button.style.backgroundColor = "#B5A2C8";
+			dropdown_button.style.color = "#000000";
 			for(var i = 0; i < links.length; i++) {
 				links[i].style.display = "none";
 			}
