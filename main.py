@@ -61,6 +61,10 @@ class blogPost(BaseHandler):
             self.render("blog-post-"+post_id+".html")
         else:
             self.redirect("/blog")
+
+class contactPage(BaseHandler):
+    def get(self):
+        self.render("contact.html")
       
 PAGE_RE = r'((?:[a-zA-Z0-9_-]+/?)*)'
         
@@ -92,6 +96,7 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/projects/?', Projects),
                                 (r'/tictactoe/?', TicTacToe),
                                 (r'/extreme_tictactoe/?', XTicTacToe),
+                                (r'/contact/?', contactPage),
                                 (r'/404error/?', error404handler),
                                 (r'/.*', error404handler),
                                 ], debug=True)
