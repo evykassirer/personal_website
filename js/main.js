@@ -10,7 +10,7 @@ if (dropdown && list && links) {
 		var open = parent.className.indexOf("open");
 		console.log(dropdown_button);
 		if (open == -1) {
-			dropdown_button.style.backgroundColor = "#421C52";
+			dropdown_button.style.backgroundColor = "#311B92";
 			dropdown_button.style.color = "#FFFFFF";
 			for(var i = 0; i < links.length; i++) {
 				if ((window.innerHeight < 400 && links[i].className == "removefirst")){
@@ -25,7 +25,7 @@ if (dropdown && list && links) {
 			parent.className = parent.className + " open";
 		}
 		else {
-			dropdown_button.style.backgroundColor = "#B5A2C8";
+			dropdown_button.style.backgroundColor = "#B39DDB";
 			dropdown_button.style.color = "#000000";
 			for(var i = 0; i < links.length; i++) {
 				links[i].style.display = "none";

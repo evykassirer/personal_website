@@ -1,26 +1,17 @@
-/*
-AN ATTEMPT TO MAKE THE HOVER THING WORK ON MOBILE (touch to read information)
-
-
 var projects = document.getElementsByClassName('project');
 var images = document.getElementsByClassName('projectimage');
 if (projects && images) {
 	function f(i) {
-		images[i].style.display = "block";
+		if (images[i].style.display == "none") {
+			images[i].style.display = "block";
+		}
+		else {
+			images[i].style.display = "none";
+		}
 	}
-	for(var i = 0; i < projects.length && i < images.length; i++) {
-		projects[i].onclick = f(i);
-	}
+	for(var i = 0; i < projects.length && i < images.length; i++) (function(i) {
+		projects[i].onclick = function() {
+			f(i);
+		};
+	})(i);
 }
-
-/* Add links to projects */
-/*
-var project = document.getElementsByClassName('codenext');
-if (project) {
-	console.log("got it");
-	project[0].onclick = function(){
-		window.open('http://davepagurek.com/yc/', '_blank');
-	}
-}
-
-*/

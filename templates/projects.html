@@ -6,101 +6,124 @@
 {% block body %}
 			<h2>Projects</h2>
 			<br>
-			<p> These are some of the projects I've been working on. To see a full list, as well as my code, check out <a class="link" href=http://github.com/evykassirer>my github</a>.</p>
+			<p> To see a full list, as well as my code, check out <a class="link" href=http://github.com/evykassirer>my GitHub</a>.</p>
 			<br>
-			<p> There is still so much I want to do! Check out my <a class="link" href="/todo"> list of things I want to work on soon and all the resources and cool stuff I've found over the years. </a> </p> 
-			<br>
+
 			<div id="projects">
-				<a href='http://davepagurek.com/yc/' target='_blank' class="project">
+				<div class="project">
+					<h3>What Privilege?</h3>
+					<p>Learn about how our experiences can give us power and privilege with an online interactive activity. 1300+ unique users have participated.</p>
+					<p><em>Technologies: <br> Django, SkeletonCSS, jQuery</em></p>
+					<p>Why: Inspired by a presentation at the Grace Hopper Celebration 2014. Began as a project for DeltaHacks2015.</p>
+					<p>To Do: improve content in discussions, allow users to change their answers, custom questions, workshop capabilities</p>
 					<br>
+					<a href='http://whatprivilege.me' target='_blank'>Check it out live!</a>	
+					<div class="projectimage">
+						<span class="helper"></span><img src="/static/privilege.png" alt="What Privilege website screenshot"/>
+					</div>
+				</div>
+
+
+			<div id="projects">
+			<div class="project">
+				<h3>This Website</h3>
+				<p>Share my projects and passions with others.</p>
+				<p><em>Technologies: <br> Google App Engine, Python (webapp2), HTML, CSS, Javascript </em></p>
+				<p>To Do: Add <a href="https://www.google.com/fonts" target='_blank'>open source fonts</a>, fix some HTML/CSS style, make an HTML copy of my resume</p>
+				<br>
+				<div class="projectimage">
+					<span class="helper"></span><img src="/static/website.png" alt="My website"/>
+				</div>
+			</div>
+
+			<div id="projects">
+			<div class="project">
+				<h3>Lecture Playback</h3>
+				<p>Record and audio from lectures and play it back at faster speeds to catch up to the professor in real time.</p>
+				<p><em>Technologies: <br> Android (AudioRecord, AudioTrack ) </em></p>
+				<p>Why: Project for PiazzaHacks 2015. Won second place.</p>
+				<p>To Do: Increase audio storage size, nice UI</p>
+				<br>
+				<a href="https://docs.google.com/presentation/d/13w2o7rdNYbhnV9268Ciz4YPxeYPecJiEmY-8drPal-g/edit?usp=sharing" target='_blank'>Read about how it works</a> and <a href="https://github.com/scheeloong/PiazzaHack" target='_blank'>check it out on GitHub</a>
+				<div class="projectimage">
+					<span class="helper"></span><img src="/static/lectureplayback.png" alt="Screenshot of the app"/>
+				</div>
+			</div>
+
+			<div id="projects">
+				<div class="project">
 					<h3>CodeNext</h3>
-					<br>
 					<p>There are a lot of learning materials to choose from. We narrow it down.</p>
-					<br>
 					<p><em>Technologies: <br> PHP, Mysql, HTML, CSS, Javascript </em></p>
+					<p>Why: Project for YCHacks 2014. I mainly worked on backend. This helps solve an overwhelming issue I've faced for a while.</p>
+					<p>To Do: move to webapp2, increase security and form validation, improve UI and mobile view, look into <a href="https://twitter.github.io/typeahead.js/" target='_blank'>typeahead.js</a>, add user accounts.</p>
 					<br>
-					<p>Why: Project for YCHacks 2014. I mainly worked on backend. This helps solve an overwhelming issue I've faced for a while, and I hope to continue to work on it.</p>
-					<br>
-					<p>To Do: move to webapp2, increase security, improve UI, add user accounts.</p>			
+					<a href='http://davepagurek.com/yc/' target='_blank'>Check it out live!</a>	
 					<div class="projectimage">
 						<span class="helper"></span><img src="/static/codenext.jpg" alt="CodeNext website logo and 'I want to learn' button"/>
 					</div>
-				</a>
+				</div>
 
-				<a href='https://github.com/evykassirer/TextFormat' target='_blank' class="project">
-					<br>
+				<div class="project">
 					<h3>Text Format</h3>
-					<br>
 					<p>Accessibility extension to allow low vision users to change the style of the text on a webpage.</p>
-					<br>
 					<p><em>Technologies: <br> HTML, CSS, Javascript </em></p>
+					<p>Why: Get better with JavaScript and CSS. Started at an accessibility hackathon with my Google team.</p>
+					<p>To Do: custom inputs? Moonshot: let the user select any text on the page and change formatting for just that text</p>	
 					<br>
-					<p>Why: Started at an accessibility hackathon with my Google team. There was a need for an extension that would change text spacing. I also added  toggling of bold and italics.</p>
-					<br>
-					<p>To Do: ability to save/load settings, request code review for good style and comments.</p>			
+					<a href='https://github.com/evykassirer/TextFormat' target='_blank'>Check it out on GitHub!</a>		
 					<div class="projectimage">
 						<span class="helper"></span><img src="/static/textformat.png" alt="CodeNext website logo and 'I want to learn' button"/>
 					</div>
-				</a>
+				</div>
 
-				<a href='/tictactoe' class="project">
-					<br>
+				<div class="project">
 					<h3>Tic Tac Toe</h3>
-					<br>
 					<p> A more challenging and strategy requiring twist on a classic childhood game. </p>
-					<br>
 					<p><em>Technologies: <br> HTML, CSS, Javascript</em></p>
-					<br>
 					<p>Why: This was my first Javascript project. In creating this game I explored features including how the DOM and event listners work.</p>
-					<br>
 					<p>To Do: cross browser support, add ability to play with friends from separate windows.</p>
+					<br>
+					<a href='/tictactoe' target='_blank'>Check it out live!</a>
 					<div class="projectimage">
 						<span class="helper"></span><img src="/static/ttt.png" alt="tic tac toe game"/>
 					</div>
-				</a>
+				</div>
 
-				<a href='/udacity' class="project">
-					<br>
+				<div class="project">
 					<h3>Udacity Web Development Course Projects</h3>
-					<br>
 					<p>Web application developed from self learning course. Some silly form validation projects, a "blog" (guestbook), and a wiki. </p>
-					<br>
 					<p class="smaller"><em>Technologies: GoogleAppEngine, Python, webapp2, GSQL <br><br>
 					Implemented: HTTP Requests · Form Handling · Cookie Hashing · Password Hashing · APIs · Scaling · Caching</em><p>
 					<br>
-					<p>To Do: make the blog sign in actually do something, make the wiki easier to interact with, finish the course bonus.
+					<a href='/udacity' target='_blank'>Check it out live!</a>
 					<div class="projectimage">
 						<span class="helper"></span><img src="/static/udacity.png" alt="Udacity course projects"/>
 					</div>
-				</a>
+				</div>
 
-				<a href='/https://github.com/evykassirer/RSA' class="project">
-					<br>
+				<div class="project">
 					<h3>RSA Implementation</h3>
-					<br>
 					<p>Implemented RSA model learned in algebra class with a functional programming language. Uses number encrypting to encrypt/decrypt strings of any length. </p>
-					<br>
 					<p>Why: Fun, easy, and awesome.</p>
 					<br>
+					<a href='/https://github.com/evykassirer/RSA' target='_blank'>Check it out on GitHub!</a>
 					<div class="projectimage">
 						<span class="helper"></span><img src="/static/RSA.png" alt="RSA Implementation"/>
 					</div>
-				</a>
+				</div>
 
-				<a href='/https://github.com/evykassirer/FlowersofHanoi' class="project">
-					<br>
+				<div class="project">
 					<h3>Flowers of Hanoi</h3>
-					<br>
 					<p>Towers of Hanoi game implemented with linked list stacks to store the towers. Modes for both computer and user to solve puzzle with up to 9 leaves. </p>
-					<br>
 					<p><em>Technologies: C++, Allegro </em></p>
-					<br>
 					<p>Why: 12th grade project for Computer Science class.</p>
 					<br>
+					<a href='/https://github.com/evykassirer/FlowersofHanoi' target='_blank'>Check it out on GitHub! </a>
 					<div class="projectimage">
 						<span class="helper"></span><img src="/static/hanoi.jpg" alt="RSA Implementation"/>
 					</div>
-				</a>
+				</div>
 
 
 			</div>
