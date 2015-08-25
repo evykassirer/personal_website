@@ -35,9 +35,9 @@ class MainUdacityPage(BaseHandler):
     def get(self):
         self.render("udacity/welcome.html")       
       
-class ToDo(BaseHandler):
+class Resources(BaseHandler):
     def get(self):
-      self.render("todo.html") 
+      self.render("resources.html") 
 
 class Projects(BaseHandler):
     def get(self):
@@ -90,7 +90,7 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/udacity/wiki/_edit/' + PAGE_RE, WikiEditPost),
                                 (r'/udacity/wiki/' + PAGE_RE, WikiPostPage),
                                 #my stuff
-                                (r'/todo/?', ToDo),
+                                (r'/resources/?', Resources),
                                 (r'/blog/?', blogMain),
                                 (r'/blog/(.*)/?', blogPost),
                                 (r'/projects/?', Projects),
