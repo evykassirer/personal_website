@@ -1,12 +1,5 @@
-h1 {
+.centertitle {
     text-align: center;
-}
-
-h2 {
-    font-size: 20px;
-	font-weight: bold;
-    padding-top:20px;
-    padding-bottom: 5px;
 }
 
 .pagebody{
