@@ -27,6 +27,10 @@ h3, p {
 	text-align: center;
 }
 
+.project:hover, .projectimage:hover {
+	cursor: pointer;
+}
+
 .project p {
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -63,6 +67,26 @@ h3, p {
 	vertical-align: middle;
 	max-width:350px; 
 	max-height:350px;
+}
+
+/* smaller images for smaller screens */
+@media all and (max-width:400px) { 
+	.projectimage img {
+		vertical-align: middle;
+		max-width:300px; 
+		max-height:300px;
+	}
+	.project {
+		height:300px;
+		width:300px;
+		float:left;
+		background-color: white;
+		margin:20px;
+		position: relative;
+		text-align: center;
+		font-size: 12px;
+	}
+
 }
 
 .helper {
