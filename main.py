@@ -65,6 +65,10 @@ class blogPost(BaseHandler):
 class contactPage(BaseHandler):
     def get(self):
         self.render("contact.html")
+
+class musicPage(BaseHandler):
+    def get(self):
+        self.render("music.html")
       
 PAGE_RE = r'((?:[a-zA-Z0-9_-]+/?)*)'
         
@@ -97,6 +101,7 @@ app = webapp2.WSGIApplication([(r'/', MainPage),
                                 (r'/tictactoe/?', TicTacToe),
                                 (r'/extreme_tictactoe/?', XTicTacToe),
                                 (r'/contact/?', contactPage),
+                                (r'/music/?', musicPage),
                                 (r'/404error/?', error404handler),
                                 (r'/.*', error404handler),
                                 ], debug=True)
