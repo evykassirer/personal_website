@@ -85,3 +85,12 @@
   	width: 90%;
   }
 }
+
+.pagebody a {
+text-decoration: none;
+}
+
+.pagebody a:hover {
+color: #B39DDB;
+text-decoration: underline;
+}
