@@ -15,7 +15,7 @@
 
 .mepic{
     padding: 10px;
-    padding-left: 20%;
+    float:left; 
 }
 
 .mepic img {
@@ -23,25 +23,28 @@
 }
 
 .intro{
-    float: center;
     font-size: 14px;
-    position: relative;
     text-align: left;
 	line-height:150%;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10px;
+    overflow:hidden;
+    max-width: 50%;
 }
 
-.intro a {
-    text-decoration: none;
-    color: #2A5DB0;
+.intro p {
+    padding-bottom: 3%;
 }
 
-.intro a:hover {
-    text-decoration: underline;
+.container {
+    overflow: hidden;
+    padding-bottom: 20px;
+    display: block;
 }
 
-@media all and (max-width:850px) { 
+
+@media all and (max-width:915px) { 
     .intro{
         float: center;
         font-size: 14px;
@@ -50,10 +53,11 @@
         line-height:150%;
         padding-left: 15%;
         padding-right: 15%;
+        max-width: 100%;
     }
 
-
     .mepic{
+        float: none;
         padding: 10px;
         text-align:center;
     }
@@ -61,22 +65,3 @@
         height: 10em;
     }
 }
-/*   .pagebody{
-        width:90%;
-    }
-    .mepic{
-        float:none;
-        width:100%;
-   }
-   .mepic img {
-        width:50%;
-        padding:10px;
-        display:block;
-        margin-left: auto;
-        margin-right: auto;
-   }
-   .intro {
-        float: none;
-        width:100%;
-   }
-}*/

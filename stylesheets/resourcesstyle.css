@@ -17,16 +17,6 @@
     padding-bottom: 0px;
 }
 
-.pagebody a:hover{
-	text-decoration: underline;
-	font-weight: normal;
-}
-
-.pagebody a{
-	text-decoration: none;
-	color: blue;
-}
-
 .age {
     position: relative;
     bottom: 0px;
