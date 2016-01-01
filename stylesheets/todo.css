@@ -1,0 +1,53 @@
+.text {
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-bottom: 20px;
+}	
+
+.done {
+	text-decoration: line-through;
+}
+
+.center {
+    text-align: center;
+}
+
+.banner {
+	background-color: lightblue;
+	width: 100%;
+	text-align: center;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+li {
+	padding-top: 2%;
+}
+
+li ul {
+	margin-left: 3%;
+	font-style: italic;
+}
+
+li ul li {
+	padding-top: 1%;
+}
+
+@media screen and (max-width: 900px) {
+.text {
+  	padding-left: 10%;
+  	padding-right: 7%;
+  	width: 80%;
+  }
+}
+
+.pagebody a {
+text-decoration: none;
+}
+
+.pagebody a:hover {
+color: #B39DDB;
+text-decoration: underline;
+}
